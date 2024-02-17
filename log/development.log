@@ -274,3 +274,575 @@ Processing by RootController#index as HTML
 Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 21227)
 
 
+Started GET "/root/result" for ::1 at 2024-02-17 21:20:14 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.7ms | Allocations: 448)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 17468)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 20677)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:20:45 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.7ms | Allocations: 224)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2032)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 3405)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:23:18 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.5ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2028)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 3350)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:25:59 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 1.1ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2002)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 3326)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:25:59 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:25:59 +0900
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.7ms | Allocations: 199)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1845)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Started GET "/root/result" for ::1 at 2024-02-17 21:27:17 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.4ms | Allocations: 192)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1999)
+Completed 200 OK in 14ms (Views: 8.0ms | Allocations: 3319)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:27:17 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:27:17 +0900
+Processing by RootController#index as JS
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.6ms | Allocations: 461)
+Completed 200 OK in 20ms (Views: 2.1ms | Allocations: 16430)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:28:16 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.4ms | Allocations: 192)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2004)
+Completed 200 OK in 13ms (Views: 7.5ms | Allocations: 3263)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:28:16 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:28:16 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 4.9ms | Allocations: 632)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 2538)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:28:29 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.9ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2005)
+Completed 200 OK in 12ms (Views: 10.2ms | Allocations: 3264)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:28:29 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:28:29 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 311)
+Completed 200 OK in 3ms (Views: 2.0ms | Allocations: 2631)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:28:35 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 1.4ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2005)
+Completed 200 OK in 11ms (Views: 9.3ms | Allocations: 3266)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:28:35 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:28:35 +0900
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.3ms | Allocations: 201)
+Completed 200 OK in 3ms (Views: 1.9ms | Allocations: 2626)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:29:03 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.4ms | Allocations: 192)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2004)
+Completed 200 OK in 8ms (Views: 6.8ms | Allocations: 3265)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:29:03 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:29:03 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 633)
+Completed 200 OK in 3ms (Views: 2.0ms | Allocations: 2539)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:39:08 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.6ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2010)
+Completed 200 OK in 10ms (Views: 7.1ms | Allocations: 3271)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:39:08 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:39:08 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 637)
+Completed 200 OK in 3ms (Views: 2.0ms | Allocations: 2610)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:39:28 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.6ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 2014)
+Completed 200 OK in 22ms (Views: 20.4ms | Allocations: 3275)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:39:28 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:39:28 +0900
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 1.1ms | Allocations: 218)
+Completed 200 OK in 4ms (Views: 3.2ms | Allocations: 2529)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:39:39 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.9ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2009)
+Completed 200 OK in 14ms (Views: 12.3ms | Allocations: 3302)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:39:39 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:39:39 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 634)
+Completed 200 OK in 3ms (Views: 2.2ms | Allocations: 2628)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:50:50 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.4ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2009)
+Completed 200 OK in 11ms (Views: 9.0ms | Allocations: 3270)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:50:50 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:50:50 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 630)
+Completed 200 OK in 3ms (Views: 2.0ms | Allocations: 2534)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:53:49 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.7ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2027)
+Completed 200 OK in 6ms (Views: 5.2ms | Allocations: 3287)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:53:49 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:53:49 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.7ms | Allocations: 460)
+Completed 200 OK in 3ms (Views: 2.0ms | Allocations: 2634)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:54:18 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 2.4ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2005)
+Completed 200 OK in 14ms (Views: 12.6ms | Allocations: 3266)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:54:18 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:54:18 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 301)
+Completed 200 OK in 3ms (Views: 1.9ms | Allocations: 2635)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:57:20 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 1.4ms | Allocations: 227)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2035)
+Completed 200 OK in 15ms (Views: 11.2ms | Allocations: 3296)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:57:20 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:57:20 +0900
+Processing by RootController#index as JS
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.4ms | Allocations: 474)
+Completed 200 OK in 14ms (Views: 2.4ms | Allocations: 16551)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:59:08 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.9ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 2011)
+Completed 200 OK in 15ms (Views: 12.7ms | Allocations: 3272)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:59:08 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:59:08 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+Processing by RootController#index as JS
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.7ms | Allocations: 457)
+Completed 200 OK in 3ms (Views: 2.5ms | Allocations: 2365)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 21:59:18 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1480)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 1924)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 21:59:18 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 21:59:18 +0900
+Processing by RootController#index as JS
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  Rendering root/index.html.erb
+  Rendered root/index.html.erb (Duration: 0.1ms | Allocations: 39)
+Completed 200 OK in 15ms (Views: 13.8ms | Allocations: 14807)
+
+
+Started GET "/" for ::1 at 2024-02-17 22:05:12 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 375)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4512)
+Completed 200 OK in 24ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 8293)
+
+
+Started GET "/" for ::1 at 2024-02-17 22:05:28 +0900
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1698)
+Completed 200 OK in 2ms (Views: 1.9ms | Allocations: 2476)
+
+
+Started GET "/" for ::1 at 2024-02-17 22:05:29 +0900
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1478)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 1977)
+
+
+Started GET "/" for ::1 at 2024-02-17 22:12:09 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 375)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4512)
+Completed 200 OK in 24ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 8292)
+
+
+Started GET "/root/result" for ::1 at 2024-02-17 22:12:13 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 1.7ms | Allocations: 180)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1751)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 2408)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:12:13 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:12:13 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
+Started GET "/root/result" for ::1 at 2024-02-17 22:12:38 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 1.0ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2012)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3344)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:12:38 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:12:38 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
+Started GET "/root/result" for ::1 at 2024-02-17 22:14:06 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.7ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2039)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3330)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:14:06 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:14:06 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
+Started GET "/root/result" for ::1 at 2024-02-17 22:14:36 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.9ms | Allocations: 458)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4587)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 7920)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:14:36 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:14:36 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
+Started GET "/root/result" for ::1 at 2024-02-17 22:15:23 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.3ms | Allocations: 226)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2038)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3373)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:15:23 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:15:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
+Started GET "/root/result" for ::1 at 2024-02-17 22:16:09 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 6.2ms | Allocations: 4253)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4331)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 5590)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `key' for #<ActionView::Base:0x00000000008ae8>):
+     8:   </head>
+     9:   <body>
+    10:     <div id="map"></div>
+    11: <script src="https://maps.googleapis.com/maps/api/js?key=<%= key %>&callback=initMap" async defer></script>
+    12: 
+    13:   </body>
+    14: </html>
+  
+app/views/root/result.html.erb:11
+Started GET "/root/result" for ::1 at 2024-02-17 22:16:41 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4199)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4277)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 5560)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `apikey' for #<ActionView::Base:0x00000000008f70>):
+     8:   </head>
+     9:   <body>
+    10:     <div id="map"></div>
+    11: <script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=initMap" async defer></script>
+    12: 
+    13:   </body>
+    14: </html>
+  
+app/views/root/result.html.erb:11
+Started GET "/root/result" for ::1 at 2024-02-17 22:17:11 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4195)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4273)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 5551)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `apikey' for #<ActionView::Base:0x000000000093f8>):
+     8:   </head>
+     9:   <body>
+    10:     <div id="map"></div>
+    11: <script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=initMap" async defer></script>
+    12: 
+    13:   </body>
+    14: </html>
+  
+app/views/root/result.html.erb:11
+Started GET "/root/result" for ::1 at 2024-02-17 22:17:40 +0900
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4194)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4272)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 5550)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `apikey' for #<ActionView::Base:0x00000000009880>):
+     8:   </head>
+     9:   <body>
+    10:     <div id="map"></div>
+    11:     <script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=initMap" async defer></script>
+    12:   </body>
+    13: </html>
+    14: <style>
+  
+app/views/root/result.html.erb:11
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/root/result" for ::1 at 2024-02-17 22:21:42 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 0.9ms | Allocations: 461)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4585)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 7918)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:21:42 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:21:42 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/root/result" for ::1 at 2024-02-17 22:27:13 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RootController#result as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/result.html.erb within layouts/application
+  Rendered root/result.html.erb within layouts/application (Duration: 1.0ms | Allocations: 461)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4585)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 7919)
+
+
+Started GET "/root/style.css" for ::1 at 2024-02-17 22:27:13 +0900
+Started GET "/root/index.js" for ::1 at 2024-02-17 22:27:13 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/style.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/root/index.js"):
+  
