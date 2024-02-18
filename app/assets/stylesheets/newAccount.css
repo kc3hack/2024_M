@@ -1,0 +1,19 @@
+.account2{
+    margin-top: 15vh;
+    margin-left: 30vw;
+    height: 5vh;
+    width: 40vw;
+}
+.adress2{
+    margin-top: 10vh;
+    margin-left: 30vw;
+    height: 5vh;
+    width: 40vw;
+}
+.createButton{
+    margin-top: 10vh;
+    margin-left: 45vw;
+    width: 8vw;
+    height: 5vh;
+    background-color: #fefdfd;
+}
