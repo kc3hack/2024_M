@@ -4,5 +4,13 @@ Rails.application.routes.draw do
 
   get 'root/result' => 'root#result'
 
+  get 'root/siteTop' => 'root#siteTop'
+
+  get 'root/login' => 'root#login'
+
+  get 'root/newAccount' => 'root#newAccount'
+
+  get 'root/mypageRecommend' => 'root#mypageRecommend'
+
   root to: 'root#index'
 end
