@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
   root 'courses#index'
 
+  get 'courses/siteTop' => 'courses#siteTop'
+
+  get 'courses/login' => 'courses#login'
+
+  get 'courses/newAccount' => 'courses#newAccount'
+
+  get 'courses/mypageRecommend' => 'courses#mypageRecommend'
+
   get 'courses/index' => 'courses#index'
 
   get 'courses/new' => 'courses#new'
