@@ -1,5 +1,41 @@
-<h1>Hello World!</h1>
 
-<li>fjaijfja</li>
+<h1>経路一覧</h1>
 
-<h1>shushudesu</h1>
+<table>
+  <tr>
+    <th>スタート地点</th>
+    <th>経由地</th>
+    <th>目的地</th>
+  </tr>
+
+  <% @routes.each do |route| %>
+    <tr>
+      <td><%= route.start_point %></td>
+      <td><%= route.waypoint %></td>
+      <td><%= route.destination %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_with(model: @new_route, url: routes_path, local: true) do |form| %>
+  <div>
+    <%= form.label :start_point, 'スタート地点' %>
+    <%= form.text_field :start_point %>
+  </div>
+
+  <div>
+    <%= form.label :waypoint, '経由地' %>
+    <%= form.text_field :waypoint %>
+  </div>
+
+  <div>
+    <%= form.label :destination, '目的地' %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div>
+    <%= form.submit '経路登録' %>
+  </div>
+<% end %>
+
+<button id="addWaypoint">経由地を追加</button>
