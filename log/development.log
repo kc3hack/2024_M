@@ -4048,3 +4048,37 @@ Processing by RootController#index as HTML
 Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 3.7ms | Allocations: 3395)
 
 
+Started GET "/" for ::1 at 2024-02-18 22:24:38 +0900
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/root/index.html.erb:11
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/root/index.html.erb:11
+  Rendered root/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 2129)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 3694)
+Completed 200 OK in 46ms (Views: 39.8ms | ActiveRecord: 4.4ms | Allocations: 4176)
+
+
+Started GET "/root/index" for ::1 at 2024-02-18 22:51:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/index"):
+  
+Started GET "/root/index" for ::1 at 2024-02-18 22:51:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/root/index"):
+  
+Started GET "/" for ::1 at 2024-02-18 22:51:28 +0900
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/root/index.html.erb:11
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/root/index.html.erb:11
+  Rendered root/index.html.erb within layouts/application (Duration: 30.7ms | Allocations: 2092)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 3657)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 8.2ms | Allocations: 4129)
+
+
