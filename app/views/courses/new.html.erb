@@ -1,0 +1,14 @@
+<h1>Route</h1>
+<h3>新規route</h3>
+<%= form_for @course do |f| %>
+  <div class="field">
+    <%= f.label :start %>
+    <%= f.text_field :start, :size => 140 %>
+    <br>
+    <%= f.label :destination %>
+    <%= f.text_field :destination, :size => 140 %>
+    <br>
+	</div>
+  <%= f.submit "経路検索" %>
+<% end %>
+<%= link_to "Route一覧に戻る", courses_index_path %>
