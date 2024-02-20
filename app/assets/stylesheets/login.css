@@ -7,18 +7,30 @@ box-sizing: border-box;
 *:focus {
   outline: none;
 }
+.background {
+    background-image: url("https://as1.ftcdn.net/v2/jpg/04/88/34/62/1000_F_488346274_IsoRxPXOFTAfAxN9K3hTpdkDNlkY1VMw.jpg");
+    background-position: center;
+    text-align: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
 .login {
+
 margin: 20px auto;
 width: 300px;
 }
-.login-screen {
+/* .login-screen {
 background-color: #FFF;
 padding: 20px;
 border-radius: 5px
-}
+} */
 
 .app-title {
-margin: 2vh;
+margin-top: 20vh;
+margin-bottom: 2vh;
+margin-left: 2vh;
+margin-right: 2vh;
 text-align: center;
 color: #060606;
 }
