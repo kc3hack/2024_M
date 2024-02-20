@@ -8,11 +8,11 @@ class Course < ApplicationRecord
         self.waypoints = values.join(', ') if values.present?
     end
 
-    def transportation
-        read_attribute(:transportation)
-      end
+    def transportation_list
+      transportation.split(',').map(&:strip) if transportation.present?
+    end
     
-      def transportation=(value)
-        write_attribute(:transportation, value)
-      end
+    def transportation_list=(values)
+      self.transportation = values.join(', ') if values.present?
+    end
 end
