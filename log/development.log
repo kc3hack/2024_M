@@ -15189,3 +15189,48 @@ Processing by CoursesController#newAccount as HTML
 Completed 200 OK in 5ms (Views: 3.9ms | Allocations: 2394)
 
 
+Started GET "/courses/mypageRecommend" for ::1 at 2024-02-20 14:12:41 +0900
+Processing by CoursesController#mypageRecommend as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/mypageRecommend.html.erb within layouts/application
+  Rendered courses/mypageRecommend.html.erb within layouts/application (Duration: 2.6ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 2456)
+Completed 200 OK in 58ms (Views: 48.4ms | Allocations: 3716)
+
+
+Started GET "/courses/mypageHistory" for ::1 at 2024-02-20 14:12:42 +0900
+Processing by CoursesController#mypageHistory as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/mypageHistory.html.erb within layouts/application
+  Rendered courses/mypageHistory.html.erb within layouts/application (Duration: 1.1ms | Allocations: 137)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2068)
+Completed 200 OK in 11ms (Views: 8.8ms | Allocations: 2668)
+
+
+Started GET "/courses/newAccount" for ::1 at 2024-02-20 14:17:40 +0900
+Processing by CoursesController#newAccount as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/newAccount.html.erb within layouts/application
+  Rendered courses/newAccount.html.erb within layouts/application (Duration: 1.5ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2059)
+Completed 200 OK in 10ms (Views: 8.6ms | Allocations: 2608)
+
+
+Started GET "/courses/newAccount" for ::1 at 2024-02-20 14:17:42 +0900
+Processing by CoursesController#newAccount as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/newAccount.html.erb within layouts/application
+  Rendered courses/newAccount.html.erb within layouts/application (Duration: 0.2ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1956)
+Completed 200 OK in 7ms (Views: 6.3ms | Allocations: 2398)
+
+
+Started GET "/courses/newAccount" for ::1 at 2024-02-20 14:18:38 +0900
+Processing by CoursesController#newAccount as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/newAccount.html.erb within layouts/application
+  Rendered courses/newAccount.html.erb within layouts/application (Duration: 4.6ms | Allocations: 172)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 21990)
+Completed 200 OK in 57ms (Views: 54.1ms | Allocations: 23250)
+
+

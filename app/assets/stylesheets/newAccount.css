@@ -1,19 +1,78 @@
-.account2{
-    margin-top: 15vh;
-    margin-left: 30vw;
-    height: 5vh;
-    width: 40vw;
+HTML CSSResult Skip Results Iframe
+EDIT ON
+* {
+box-sizing: border-box;
 }
-.adress2{
-    margin-top: 10vh;
-    margin-left: 30vw;
-    height: 5vh;
-    width: 40vw;
+
+*:focus {
+  outline: none;
 }
-.createButton{
-    margin-top: 10vh;
-    margin-left: 45vw;
-    width: 8vw;
-    height: 5vh;
-    background-color: #fefdfd;
+.login {
+margin: 20px auto;
+width: 300px;
+}
+.login-screen {
+background-color: #FFF;
+padding: 20px;
+border-radius: 5px
+}
+
+.app-title {
+margin: 2vh;
+text-align: center;
+color: #060606;
+}
+
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+
+input {
+text-align: center;
+background-color: #fdfcfc;
+border: 2px solid transparent;
+border-color: #939292;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+.btn {
+  margin-top: 2vh;
+  border: 2px solid transparent;
+  background: #3498DB;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: #2980B9;
+}
+
+.login-link {
+  font-size: 12px;
+  color: #444;
+  display: block;
+  margin-top: 12px;
 }
