@@ -39,7 +39,9 @@ body {
 
 .login {
   text-align: center;
-  margin: auto;
+  margin-top: 20vh;
+  margin-left: 40vw;
+  
   width: 300px;
 }
 /* .login-screen {
