@@ -4,8 +4,9 @@
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	</head>
 	<body>
+		<div><p id="route-time"></p></div>
 		<div>
-			<% @courses.each do |t| %>
+			<% @course.each do |t| %>
 				<div class="startdestination">
 					<%= t.start %>
 					<%= t.destination %>
@@ -16,57 +17,105 @@
 	</body>
 </html>
 <script>
-function initMap() {
-
-  var target = document.getElementById('map'); //マップを表示する要素を指定
-  var address = "大阪駅"; //住所を指定
-	var start = "<%= @test[-1].start %>";
-	var destination = "<%= @test[-1].destination %>";
+	var directionsService;
+	var directionsRenderer;
+	var distanceMatrixservice;
 	const mar = [];
-  var geocoder = new google.maps.Geocoder();
+
+	function initMap() {
+
+	var target = document.getElementById('map'); //マップを表示する要素を指定
+	var address = "大阪駅"; //住所を指定
+	var start = "<%= @courses[-1].start %>";
+	var destination = "<%= @courses[-1].destination %>";
+	var geocoder = new google.maps.Geocoder();
 	var marker = [];
 
-  geocoder.geocode({ address: start }, function(results, status){
-    if (status === 'OK' && results[0]){
-			const markers = {
-				"name": start,
+		directionsService = new google.maps.DirectionsService();
+		directionsRenderer = new google.maps.DirectionsRenderer();
+		distanceMatrixservice = new google.maps.DistanceMatrixService();
+
+		geocoder.geocode({ address: start }, function(results, status){
+			if (status === 'OK' && results[0]){
+				const markers = {
+					"name": start,
+					"lat": results[0].geometry.location.lat(),
+					"lng": results[0].geometry.location.lng()
+				};
+				mar.push(markers);
+			}else{
+				//住所が存在しない場合の処理
+				alert('住所が正しくないか存在しません。');
+				target.style.display='none';
+			}
+		});
+		geocoder.geocode({ address: destination }, function(results, status){
+			if (status === 'OK' && results[0]){
+			const markerd = {
+				"name": destination,
 				"lat": results[0].geometry.location.lat(),
 				"lng": results[0].geometry.location.lng()
 			};
-			mar.push(markers);
-    }else{
-      //住所が存在しない場合の処理
-      alert('住所が正しくないか存在しません。');
-      target.style.display='none';
-    }
-  });
-	geocoder.geocode({ address: destination }, function(results, status){
-		if (status === 'OK' && results[0]){
-		const markerd = {
-			"name": destination,
-			"lat": results[0].geometry.location.lat(),
-			"lng": results[0].geometry.location.lng()
-		};
-		mar.push(markerd)
-		}else{
-			//住所が存在しない場合の処理
-			alert('住所が正しくないか存在しません。');
-			target.style.display='none';
-		}
-		var map = new google.maps.Map(target, {
-			center: new google.maps.LatLng(38, -78),
-			zoom: 15
-		});
-		// マーカー毎の処理
-		for (var i = 0; i < mar.length; i++) {
-			markerLatLng = new google.maps.LatLng({lat: mar[i]['lat'], lng: mar[i]['lng']}); // 緯度経度のデータ作成
-			marker[i] = new google.maps.Marker({ // マーカーの追加
-				position: markerLatLng, // マーカーを立てる位置を指定
-				map: map // マーカーを立てる地図を指定
+			mar.push(markerd)
+			}else{
+				alert('住所が正しくないか存在しません。');
+				target.style.display='none';
+			}
+			var markerLatLng = new google.maps.LatLng({lat: mar[0]["lat"], lng: mar[0]["lng"]});
+			var map = new google.maps.Map(target, {
+				center: markerLatLng,
+				zoom: 15
 			});
+			console.log(mar.length);
+			for (var i = 0; i < mar.length; i++) {
+				markerLatLng = new google.maps.LatLng({lat: mar[i]["lat"], lng: mar[i]["lng"]}); // 緯度経度のデータ作成
+				marker[i] = new google.maps.Marker({
+					position: markerLatLng,
+					map: map
+				});
+			}
+		});
+		setLocation("34.7024854", "135.4959506");
+	}
+	function setLocation(lat, lng){
+    // 所要時間取得
+		distanceMatrixservice.getDistanceMatrix({
+			origins: [lat +"," + lng], // 出発地
+			destinations: ["34.985849" + "," + "135.7587667"], // 目的地
+			travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+		}, timeRequired)
+		// ルート取得
+		directionsService
+		.route({
+			origin: lat +"," + lng, // 出発地
+			destination: "34.985849" + "," + "135.7587667", // 目的地
+			travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+		})
+		.then((response) => {
+			directionsRenderer.setDirections(response);
+			map.panTo(new google.maps.LatLng(lat,lng));
+		})
+		.catch((e) => window.alert("Directions request failed due to " + status));
+	}
+
+	function timeRequired(response, status) {
+		if(status == "OK") {
+		var origins = response.originAddresses;
+		var destinations = response.destinationAddresses;
+		for (var i = 0; i < origins.length; i++) {
+			var results = response.rows[i].elements;
+			for (var j = 0; j < results.length; j++) {
+				var element = results[j];
+				var distance = element.distance.text;
+				var duration = element.duration.text;
+				var from = origins[i];
+				var to = destinations[j];
+			}
 		}
-	});
-}
+		var routeTime = document.getElementById("route-time");
+		routeTime.innerHTML = "およそ" + duration + "で着きます"
+		}
+	}
 </script>
 
 <script src="//maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap"></script>
