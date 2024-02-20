@@ -7290,3 +7290,72 @@ Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 1.0ms | Allocations: 133
 
 =======
 >>>>>>> origin
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/index" for ::1 at 2024-02-20 12:59:10 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 6200)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 12259)
+Completed 200 OK in 29ms (Views: 15.6ms | ActiveRecord: 1.0ms | Allocations: 17431)
+
+
+Started GET "/courses/index" for ::1 at 2024-02-20 12:59:24 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2279)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4252)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.8ms | Allocations: 4897)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/index" for ::1 at 2024-02-20 13:05:38 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 6200)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 12259)
+Completed 200 OK in 25ms (Views: 11.8ms | ActiveRecord: 0.8ms | Allocations: 17607)
+
+
+Started GET "/" for ::1 at 2024-02-20 13:06:01 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2279)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4252)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.9ms | Allocations: 4897)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 13:06:22 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 6144)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 8096)
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 8803)
+
+
