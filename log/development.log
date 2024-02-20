@@ -7186,3 +7186,104 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 30ms (Views: 21.2ms | ActiveRecord: 0.3ms | Allocations: 5629)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/root/result" for ::1 at 2024-02-20 12:49:18 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/root/result"):
+  
+Started GET "/courses/index" for ::1 at 2024-02-20 12:49:28 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:8
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:25
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4821)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 20147)
+Completed 200 OK in 61ms (Views: 56.5ms | ActiveRecord: 0.6ms | Allocations: 24106)
+
+
+Started GET "/courses/index" for ::1 at 2024-02-20 12:49:31 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:8
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:25
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1573)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3544)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.5ms | Allocations: 4172)
+
+
+Started GET "/courses/index" for ::1 at 2024-02-20 12:49:32 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:8
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:25
+  Rendered courses/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1474)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 3317)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.8ms | Allocations: 3833)
+
+
+Started GET "/courses/index" for ::1 at 2024-02-20 12:52:03 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:8
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:25
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1468)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3307)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.7ms | Allocations: 3809)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/index" for ::1 at 2024-02-20 12:53:13 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2424)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2522)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 7481)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6: 	<body>
+     7: 		<div><p id="route-time"></p></div>
+     8: 		<div>
+     9: 			<% @course.each do |t| %>
+    10: 				<div class="startdestination">
+    11: 					<%= t.start %>
+    12: 					<%= t.destination %>
+  
+app/views/courses/index.html.erb:9
+Started GET "/courses/index" for ::1 at 2024-02-20 12:53:51 +0900
+Processing by CoursesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4520)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 10573)
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 1.0ms | Allocations: 13320)
+
+
