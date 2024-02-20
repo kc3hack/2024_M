@@ -76973,3 +76973,459 @@ Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.9ms | Allocations: 5393
 
 
   [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 22:57:51 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4387)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 11629)
+Completed 200 OK in 38ms (Views: 20.1ms | ActiveRecord: 0.3ms | Allocations: 20205)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:11:25 +0900
+Processing by CoursesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1779)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3849)
+Completed 200 OK in 19ms (Views: 6.2ms | ActiveRecord: 2.2ms | Allocations: 8948)
+
+
+Started POST "/courses" for ::1 at 2024-02-20 23:11:35 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"なんば", "destination"=>"梅田"}, "waypoints"=>"なんば", "transportation"=>"自動車"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (2.6ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "梅田"], ["created_at", "2024-02-20 14:11:35.606038"], ["updated_at", "2024-02-20 14:11:35.606038"], ["waypoints", "なんば"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 4.4ms | Allocations: 4020)
+
+
+Started GET "/" for ::1 at 2024-02-20 23:11:35 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2996)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4912)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 5673)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 23:16:35 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 2209)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 4442)
+Completed 200 OK in 46ms (Views: 38.8ms | ActiveRecord: 0.0ms | Allocations: 5818)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:16:37 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3369)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3904)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:16:37 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3353)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3814)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:16:37 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1452)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3357)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3831)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:16:55 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2169)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4419)
+Completed 200 OK in 24ms (Views: 20.2ms | Allocations: 5804)
+
+
+Started POST "/courses" for ::1 at 2024-02-20 23:17:03 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"なんば", "destination"=>"姫路"}, "waypoints"=>"なんば", "transportation"=>"自動車"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (1.1ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "姫路"], ["created_at", "2024-02-20 14:17:03.737333"], ["updated_at", "2024-02-20 14:17:03.737333"], ["waypoints", "なんば"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 7.7ms | Allocations: 3458)
+
+
+Started GET "/" for ::1 at 2024-02-20 23:17:03 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2840)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4755)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 1.7ms | Allocations: 5421)
+
+
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 23:17:56 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3353)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 3815)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:30:08 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2175)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4408)
+Completed 200 OK in 19ms (Views: 14.7ms | Allocations: 5773)
+
+
+Started POST "/courses" for ::1 at 2024-02-20 23:30:15 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"なんば:自動車", "destination"=>"梅田"}, "waypoints"=>"なんば", "transportation"=>"自動車"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (2.4ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "梅田"], ["created_at", "2024-02-20 14:30:15.886070"], ["updated_at", "2024-02-20 14:30:15.886070"], ["waypoints", "なんば:自動車"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 7.3ms | Allocations: 3449)
+
+
+Started GET "/" for ::1 at 2024-02-20 23:30:15 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2851)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4766)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.3ms | Allocations: 5431)
+
+
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 23:34:12 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2163)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4412)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 5792)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:34:13 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3353)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3874)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:35:32 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3353)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 3814)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:35:32 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3358)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3820)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:35:32 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3364)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3826)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:35:32 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3353)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3814)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:37:37 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2163)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4396)
+Completed 200 OK in 24ms (Views: 20.0ms | Allocations: 5766)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:37:38 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3353)
+Completed 200 OK in 3ms (Views: 3.1ms | Allocations: 3870)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:37:38 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 3353)
+Completed 200 OK in 3ms (Views: 2.9ms | Allocations: 3811)
+
+
+Started POST "/courses" for ::1 at 2024-02-20 23:37:47 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"自動車", "destination"=>"姫路"}, "waypoints"=>"なんば", "transportation"=>"自動車"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (1.0ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "姫路"], ["created_at", "2024-02-20 14:37:47.189664"], ["updated_at", "2024-02-20 14:37:47.189664"], ["waypoints", "自動車"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 3.9ms | Allocations: 3413)
+
+
+Started GET "/" for ::1 at 2024-02-20 23:37:47 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 2867)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 4798)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.9ms | Allocations: 5450)
+
+
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 23:39:54 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2175)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4424)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 5803)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:39:55 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3353)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 3874)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:40:33 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2161)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4399)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 5772)
+
+
+Started POST "/courses" for ::1 at 2024-02-20 23:40:39 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"なんば", "destination"=>"姫路"}, "waypoints"=>"なんば", "transportation"=>"徒歩"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (0.9ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "姫路"], ["created_at", "2024-02-20 14:40:39.986066"], ["updated_at", "2024-02-20 14:40:39.986066"], ["waypoints", "なんば"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 2.9ms | Allocations: 2789)
+
+
+Started GET "/" for ::1 at 2024-02-20 23:40:40 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2812)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4738)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.2ms | Allocations: 5402)
+
+
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 23:43:23 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2198)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4431)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 5808)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:43:24 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3353)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3874)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:46:29 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2189)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4422)
+Completed 200 OK in 25ms (Views: 19.9ms | Allocations: 5788)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:53:22 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2202)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4451)
+Completed 200 OK in 23ms (Views: 18.7ms | Allocations: 5882)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:53:53 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2197)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4446)
+Completed 200 OK in 21ms (Views: 18.4ms | Allocations: 5877)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:59:55 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2213)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4462)
+Completed 200 OK in 17ms (Views: 14.2ms | Allocations: 5888)
+
+
+Started POST "/courses" for ::1 at 2024-02-21 00:00:03 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"なんば", "destination"=>"梅田"}, "waypoints"=>"なんば", "transportation"=>"自動車"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (1.3ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "梅田"], ["created_at", "2024-02-20 15:00:03.036797"], ["updated_at", "2024-02-20 15:00:03.036797"], ["waypoints", "なんば"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 8.0ms | Allocations: 3445)
+
+
+Started GET "/" for ::1 at 2024-02-21 00:00:03 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2892)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4807)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 1.8ms | Allocations: 5472)
+
+
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-21 00:00:24 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3353)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 3815)
+
+
+Started POST "/courses" for ::1 at 2024-02-21 00:00:36 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"walking", "waypoints"=>"なんば,大阪", "destination"=>"梅田"}, "waypoints"=>"大阪", "transportation"=>"電車"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (1.1ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation") VALUES (?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "梅田"], ["created_at", "2024-02-20 15:00:36.680987"], ["updated_at", "2024-02-20 15:00:36.680987"], ["waypoints", "なんば,大阪"], ["transportation", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 2.3ms | Allocations: 2574)
+
+
+Started GET "/" for ::1 at 2024-02-21 00:00:36 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2472)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4404)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.6ms | Allocations: 4907)
+
+
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
