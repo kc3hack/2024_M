@@ -8,8 +8,11 @@ box-sizing: border-box;
   outline: none;
 }
 .login {
-margin: 20px auto;
-width: 300px;
+  text-align: center;
+  margin-top: 20vh;
+  margin-left: 40vw;
+  
+  width: 300px;
 }
 .login-screen {
 background-color: #FFF;
