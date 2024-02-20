@@ -1,0 +1,633 @@
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/new" for ::1 at 2024-02-20 23:30:06 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20240220071005_add_transportation_to_courses.rb
+
+
+):
+  
+activerecord (6.1.7.6) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.6) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.6) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.6) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.6) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.6) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.6) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-02-20 23:30:12 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20240220071005_add_transportation_to_courses.rb
+
+
+):
+  
+activerecord (6.1.7.6) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.6) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.6) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.6) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.6) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.6) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.6) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-02-20 23:30:12 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20240220071005_add_transportation_to_courses.rb
+
+
+):
+  
+activerecord (6.1.7.6) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.6) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.6) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.6) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.6) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.6) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.6) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2024-02-20 23:30:15 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTransportationToCourses (20240220071005)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "courses" ADD "transportation" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240220071005"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-02-20 23:30:15 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:25
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 5795)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6203)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.8ms | Allocations: 10241)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-20 23:30:20 +0900
+Processing by CoursesController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:8:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4158)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4356)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 10015)
+
+
+Started GET "/courses/k" for ::1 at 2024-02-20 23:30:22 +0900
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for CoursesController
+Did you mean?  new
+               result
+               create
+               index):
+  
+actionpack (6.1.7.6) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.7.6) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.6) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.6) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.6) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.6) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.6) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.6) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.6) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:30:25 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 133.8ms | Allocations: 49141)
+  Rendered layout layouts/application.html.erb (Duration: 134.1ms | Allocations: 49322)
+Completed 200 OK in 138ms (Views: 135.2ms | ActiveRecord: 0.0ms | Allocations: 49931)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:33:01 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 28.2ms | Allocations: 10434)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 10614)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 11058)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:33:10 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 19.9ms | Allocations: 9910)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 10090)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 10535)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:33:51 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 22.4ms | Allocations: 10945)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 11125)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 11568)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:34:19 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 19.6ms | Allocations: 10484)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 10664)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 11107)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:34:25 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1982)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2162)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2607)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:37:04 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1711)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2067)
+Completed 200 OK in 12ms (Views: 7.1ms | Allocations: 3325)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:37:44 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1365)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 1545)
+Completed 200 OK in 13ms (Views: 11.7ms | Allocations: 2036)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:38:14 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 14.0ms | Allocations: 9525)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 9705)
+Completed 200 OK in 16ms (Views: 15.0ms | Allocations: 10145)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:38:23 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 26.8ms | Allocations: 10946)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 11126)
+Completed 200 OK in 32ms (Views: 29.3ms | Allocations: 11568)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:38:59 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 12.8ms | Allocations: 10949)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 11129)
+Completed 200 OK in 22ms (Views: 15.0ms | Allocations: 11570)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:39:10 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 16.9ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 2063)
+Completed 200 OK in 29ms (Views: 28.2ms | Allocations: 3322)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:41:08 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 12.4ms | Allocations: 11043)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 11223)
+Completed 200 OK in 15ms (Views: 13.3ms | Allocations: 11714)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:41:17 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1979)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 2159)
+Completed 200 OK in 25ms (Views: 16.7ms | Allocations: 2599)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:41:17 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 1544)
+Completed 200 OK in 14ms (Views: 13.7ms | Allocations: 1986)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:45:52 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 18.2ms | Allocations: 10511)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 10691)
+Completed 200 OK in 26ms (Views: 22.5ms | Allocations: 11132)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:46:41 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 39.1ms | Allocations: 10035)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 10215)
+Completed 200 OK in 40ms (Views: 39.6ms | Allocations: 10656)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:46:51 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 23.5ms | Allocations: 10949)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 11129)
+Completed 200 OK in 25ms (Views: 24.6ms | Allocations: 11569)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:47:13 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 1544)
+Completed 200 OK in 17ms (Views: 15.4ms | Allocations: 1986)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:47:51 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 26.1ms | Allocations: 10005)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 10185)
+Completed 200 OK in 27ms (Views: 26.8ms | Allocations: 10626)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:50:47 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 17.5ms | Allocations: 11008)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 11188)
+Completed 200 OK in 20ms (Views: 18.7ms | Allocations: 11629)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:51:01 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1363)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 1543)
+Completed 200 OK in 15ms (Views: 14.6ms | Allocations: 1983)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:54:15 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 10.7ms | Allocations: 10074)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 10254)
+Completed 200 OK in 12ms (Views: 11.7ms | Allocations: 10695)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:54:38 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 25.9ms | Allocations: 10516)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 10696)
+Completed 200 OK in 27ms (Views: 26.6ms | Allocations: 11137)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:55:02 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1363)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1543)
+Completed 200 OK in 10ms (Views: 8.2ms | Allocations: 1984)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:55:33 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 26.1ms | Allocations: 10470)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 10650)
+Completed 200 OK in 27ms (Views: 26.8ms | Allocations: 11090)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:58:41 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1982)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2162)
+Completed 200 OK in 12ms (Views: 10.1ms | Allocations: 2604)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:59:04 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2066)
+Completed 200 OK in 13ms (Views: 11.6ms | Allocations: 3326)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:59:18 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1366)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 1546)
+Completed 200 OK in 14ms (Views: 13.3ms | Allocations: 2037)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 23:59:27 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1729)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2082)
+Completed 200 OK in 7ms (Views: 6.1ms | Allocations: 3336)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:00:11 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1709)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2065)
+Completed 200 OK in 6ms (Views: 5.4ms | Allocations: 3388)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:02:21 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 16.8ms | Allocations: 10048)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 10228)
+Completed 200 OK in 21ms (Views: 18.4ms | Allocations: 10720)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:02:43 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1704)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2060)
+Completed 200 OK in 18ms (Views: 16.0ms | Allocations: 3320)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:05:14 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 46.3ms | Allocations: 10570)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 10750)
+Completed 200 OK in 57ms (Views: 49.0ms | Allocations: 11241)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:05:35 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 18.5ms | Allocations: 10474)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 10654)
+Completed 200 OK in 20ms (Views: 19.5ms | Allocations: 11095)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:07:18 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 17.3ms | Allocations: 9999)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 10179)
+Completed 200 OK in 21ms (Views: 18.8ms | Allocations: 10619)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:07:27 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 8.3ms | Allocations: 10492)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 10672)
+Completed 200 OK in 9ms (Views: 8.9ms | Allocations: 11113)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:07:58 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 13.8ms | Allocations: 9997)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 10177)
+Completed 200 OK in 16ms (Views: 14.7ms | Allocations: 10618)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-21 00:08:19 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1404)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 1584)
+Completed 200 OK in 15ms (Views: 10.6ms | Allocations: 2025)
+
+
