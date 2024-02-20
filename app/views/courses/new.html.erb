@@ -5,10 +5,52 @@
     <%= f.label :start %>
     <%= f.text_field :start, :size => 140 %>
     <br>
+
+     <!-- 経由地の入力欄 -->
+    <div id="waypoints_fields" >
+      <%= f.label :waypoint ,style: "display: none;" %>
+      <%= f.text_field :waypoints, placeholder: "Enter waypoint", style: "display: none;" %>
+    </div>
+
+    <%= button_tag "経由地追加", type: "button", id: "add_waypoint" %>
+    <br>
+
     <%= f.label :destination %>
     <%= f.text_field :destination, :size => 140 %>
     <br>
+
+
 	</div>
   <%= f.submit "経路検索" %>
 <% end %>
 <%= link_to "Route一覧に戻る", courses_index_path %>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var waypointsFields = document.getElementById('waypoints_fields');
+    var addWaypointButton = document.getElementById('add_waypoint');
+    var form = document.querySelector('form');
+    var waypointsHiddenField = document.querySelector('input[name="course[waypoints]"]');
+
+    addWaypointButton.addEventListener('click', function() {
+      var newInput = document.createElement('input');
+      newInput.type = 'text';
+      newInput.name = 'waypoints';
+      newInput.placeholder = 'Enter waypoint';
+      waypointsFields.appendChild(newInput);
+    });
+
+    form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var inputs = waypointsFields.querySelectorAll('input[name="waypoints"]');
+  var waypointsValue = Array.from(inputs).map(function(input) {
+    return input.value;
+  }).join(',');
+
+  waypointsHiddenField.value = waypointsValue;
+
+  form.submit();
+  });  
+});
+</script>

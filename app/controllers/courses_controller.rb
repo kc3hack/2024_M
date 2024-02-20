@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   def index
-		@courses = Course.order(updated_at: :desc).limit(1)
-		@test = Course.all
+		@course = Course.order(updated_at: :desc).limit(1)
+		@courses = Course.all
 	end
 
   def new
@@ -22,6 +22,6 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:start, :destination)
+    params.require(:course).permit(:start, :destination, :waypoints)
   end
 end
