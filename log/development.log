@@ -7186,3 +7186,5 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 30ms (Views: 21.2ms | ActiveRecord: 0.3ms | Allocations: 5629)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
