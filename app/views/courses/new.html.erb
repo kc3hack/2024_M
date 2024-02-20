@@ -6,6 +6,11 @@
     <%= f.text_field :start, :size => 140 %>
     <br>
 
+    <!-- 移動手段のプルダウンリスト -->
+    <%= f.label :transportation %>
+    <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: true } %>
+    <br>
+
      <!-- 経由地の入力欄 -->
     <div id="waypoints_fields" >
       <%= f.label :waypoint ,style: "display: none;" %>
@@ -39,6 +44,18 @@
       newInput.name = 'waypoints';
       newInput.placeholder = 'Enter waypoint';
       waypointsFields.appendChild(newInput);
+
+      // 作ってみた
+      var newSelect = document.createElement('select');
+      newSelect.name = 'transportation';
+      var options = ["徒歩", "自動車", "電車"];
+      for(var i = 0; i < options.length; i++) {
+        var option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        newSelect.appendChild(option);
+      }
+      waypointsFields.appendChild(newSelect);
     });
 
     form.addEventListener('submit', function(e) {
@@ -48,7 +65,10 @@
     return input.value;
   }).join(',');
 
-  waypointsHiddenField.value = waypointsValue;
+  waypointsHiddenField.value += waypointsValue;
+
+  
+
 
   form.submit();
   });  
