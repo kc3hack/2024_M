@@ -5,20 +5,21 @@
     <title>サイトトップ</title>
   </head>
   <body>
+  <div>
+    <!-- ログインボタン -->
+    <button class="loginButton" onclick="location.href='./login.html'">ログイン</button> 
     <!-- スライドの外枠 -->
     <div class="slide-wrapper">
-      <!-- ログインボタン -->
-      <button class="loginButton" onclick="location.href='./login.html'">ログイン</button>
       <!-- スライド（コンテンツ） -->
       <div id="slide" class="slide">
         <div>
-          <p>スライド１</p>
+        <%= image_tag 'tuutenkaku.jpg' %>
         </div>
         <div>
-          <p>スライド２</p>
+          <%= image_tag 'nankinmati.jpg' %>
         </div>
         <div>
-          <p>スライド３</p>
+          <%= image_tag 'kiyomizudera.jpg' %>
         </div>
       </div>
       <!-- 左右のボタン -->
@@ -31,13 +32,16 @@
         <li class="list"></li>
       </ul>
     </div>
+  </div>
+  <div>
     <div class="divcenter">
       <div class="recommendRoute1">
         
       </div>
       <!-- 経路検索ボタン -->
-    <button class="searchButton" onclick="location.href='./index.html'">経路検索</button>
+    <button class="searchButton" onclick="location.href='./new.html'">経路検索</button>
     </div>
+  </div>
   </body>
 </html>
 <script>

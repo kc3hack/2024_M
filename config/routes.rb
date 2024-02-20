@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'courses/mypageRecommend' => 'courses#mypageRecommend'
 
+  get 'courses/mypageHistory' => 'courses#mypageHistory'
+
   get 'courses/index' => 'courses#index'
 
   get 'courses/new' => 'courses#new'
