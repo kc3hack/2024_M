@@ -22,6 +22,6 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:start, :destination)
+    params.require(:course).permit(:start, :destination, :waypoints)
   end
 end
