@@ -7,11 +7,14 @@
     <br>
 
     <!-- 移動手段のプルダウンリスト -->
-    <%= f.label :transportation %>
-    <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: true } %>
+    <%= f.label :transportation_origin %>
+    <%= f.select :transportation_origin, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: true } %>
     <br>
 
-     <!-- 経由地の入力欄 -->
+    <!-- 新しいカラム transportation_origin の値を格納する隠しフィールド -->
+    <%= f.hidden_field :transportation_origin, id: 'transportation_origin_hidden' %>
+
+    <!-- 経由地の入力欄 -->
     <div id="waypoints_fields" >
       <%= f.label :waypoint ,style: "display: none;" %>
       <%= f.text_field :waypoints, placeholder: "Enter waypoint", style: "display: none;" %>
@@ -23,71 +26,79 @@
     <%= f.label :destination %>
     <%= f.text_field :destination, :size => 140 %>
     <br>
-
-
-	</div>
+  </div>
   <%= f.submit "経路検索" %>
 <% end %>
 <%= link_to "Route一覧に戻る", courses_index_path %>
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-  var waypointsFields = document.getElementById('waypoints_fields');
-  var addWaypointButton = document.getElementById('add_waypoint');
-  var form = document.querySelector('form');
+    var waypointsFields = document.getElementById('waypoints_fields');
+    var addWaypointButton = document.getElementById('add_waypoint');
+    var form = document.querySelector('form');
 
-  addWaypointButton.addEventListener('click', function() {
-    var newInput = document.createElement('input');
-    newInput.type = 'text';
-    newInput.name = 'waypoints';
-    newInput.placeholder = 'Enter waypoint';
-    waypointsFields.appendChild(newInput);
+    addWaypointButton.addEventListener('click', function() {
+      var newInput = document.createElement('input');
+      newInput.type = 'text';
+      newInput.name = 'waypoints';
+      newInput.placeholder = 'Enter waypoint';
+      waypointsFields.appendChild(newInput);
 
-    // 作ってみた
-    var newSelect = document.createElement('select');
-    newSelect.name = 'transportation';
-    var options = ["徒歩", "自動車", "電車"];
-    for(var i = 0; i < options.length; i++) {
-      var option = document.createElement('option');
-      option.value = options[i];
-      option.text = options[i];
-      newSelect.appendChild(option);
-    }
-    waypointsFields.appendChild(newSelect);
-  });
+      // 一意の名前を持つ新しいselect要素を作成
+      var newSelect = document.createElement('select');
+      var selectName = 'transportation_' + (waypointsFields.children.length / 2); // 子要素の数に基づいて名前を調整
+      newSelect.name = selectName;
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+      var options = [["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]];
+      options.forEach(function(option) {
+        var optionElement = document.createElement('option');
+        optionElement.value = option[1];
+        optionElement.text = option[0];
+        newSelect.appendChild(optionElement);
+      });
 
-    // 経由地の入力値を取得
-    var waypointInputs = waypointsFields.querySelectorAll('input[name="waypoints"]');
-    var waypointsValue = Array.from(waypointInputs).map(function(input) {
-      return input.value;
-    }).join(',');
+      waypointsFields.appendChild(newSelect);
+    });
 
-    // 移動手段の選択値を取得
-    var transportationSelects = waypointsFields.querySelectorAll('select[name="transportation"]');
-    var transportationValue = Array.from(transportationSelects).map(function(select) {
-      return select.value;
-    }).join(',');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    var waypointsHiddenField = document.querySelector('input[name="course[waypoints]"]');
-    var transportationHiddenField = document.querySelector('input[name="course[transportation]"]');
+      // 経由地の入力値を取得
+      var waypointInputs = waypointsFields.querySelectorAll('input[name="waypoints"]');
+      var waypointsValue = Array.from(waypointInputs).map(function(input) {
+        return input.value;
+      }).join(',');
 
-    if (waypointsHiddenField) {
-      waypointsHiddenField.value = waypointsValue;
-    } else {
-      console.error('Waypoints hidden field not found');
-    }
+      // 移動手段の選択値を取得
+      var transportationSelects = waypointsFields.querySelectorAll('select[name^="transportation"]');
+      var transportationValue = Array.from(transportationSelects).map(function(select) {
+        return select.value;
+      }).join(',');
 
-    if (transportationHiddenField) {
+      // 新しいカラム transportation_origin の値を隠しフィールドに設定
+      var transportationOriginHiddenField = document.getElementById('transportation_origin_hidden');
+      if (transportationOriginHiddenField) {
+        transportationOriginHiddenField.value = document.querySelector('select[name="course[transportation_origin]"]').value;
+      } else {
+        console.error('Transportation Origin hidden field not found');
+      }
+
+      // 以下の行を追加し、フォームに隠しフィールドを追加
+      var transportationHiddenField = document.createElement('input');
+      transportationHiddenField.type = 'hidden';
+      transportationHiddenField.name = 'course[transportation]';
       transportationHiddenField.value = transportationValue;
-    } else {
-      console.error('Transportation hidden field not found');
-    }
+      form.appendChild(transportationHiddenField);
 
-    form.submit();
+      var waypointsHiddenField = document.querySelector('input[name="course[waypoints]"]');
+
+      if (waypointsHiddenField) {
+        waypointsHiddenField.value = waypointsValue;
+      } else {
+        console.error('Waypoints hidden field not found');
+      }
+
+      form.submit();
+    });
   });
-});
 </script>

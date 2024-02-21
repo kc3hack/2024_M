@@ -15,4 +15,14 @@ class Course < ApplicationRecord
     def transportation_list=(values)
       self.transportation = values.join(', ') if values.present?
     end
+
+    def transportation_origin_list
+      read_attribute(:transportation)
+    end
+  
+    def transportation_origin_list=(value)
+      write_attribute(:transportation, value)
+    end
+
+    
 end

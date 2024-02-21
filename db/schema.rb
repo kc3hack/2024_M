@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_20_071005) do
+ActiveRecord::Schema.define(version: 2024_02_21_094550) do
 
   create_table "courses", force: :cascade do |t|
     t.text "start"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2024_02_20_071005) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "waypoints"
     t.text "transportation"
+    t.text "transportation_origin"
   end
 
   create_table "routes", force: :cascade do |t|
