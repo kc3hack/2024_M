@@ -86676,3 +86676,9 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 4853)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
