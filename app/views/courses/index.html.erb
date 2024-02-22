@@ -15,10 +15,12 @@
 			<% end %>
 		</div>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
+		<%# <%= form_for @course do |f|%>
+
+		<%# <%= f.submit "経路検索" ,id: "search_route" %>
 	</body>
 </html>
 <script>
-	// import {  } from " ";
 	var directionsService;
 	var directionsRenderer;
 	var distanceMatrixservice;
@@ -32,7 +34,9 @@
 	const routes = [];
 	const transportations = [];
 	let count = 0;
+	const history = "";
 
+	console.log(transportation + "b");
 	transportations.push(transportation);
 	for(var i in tmps){
 		transportations.push(tmps[i])
@@ -98,14 +102,13 @@
 	}
 	function setLocation(ma){
 		console.log(ma);
+		console.log(transportations);
     	// 所要時間取得
+		if(transportations[count]==="")
 		distanceMatrixservice.getDistanceMatrix({
 			origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
 			destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
 			travelMode: google.maps.TravelMode.DRIVING, // 移動手段
-			// origin: start,
-			// destination: destination,
-			// travelMode: google.maps.TravelMode.DRIVING
 		}, timeRequired)
 		directionsService.route({
 			origin: routes[count],
@@ -137,7 +140,7 @@
 					var to = destinations[j];
 				}
 			}
-			console.log(from,to);
+			
 			var routeTime = document.getElementById("route-time");
 			routeTime.innerHTML = "およそ" + duration + "で着きます"
 		}
