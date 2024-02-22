@@ -6,8 +6,7 @@
       <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: false } ,id: "transportation"%>
       <br>
 
-      <!-- 新しいカラム transportation_origin の値を格納する隠しフィールド -->
-      <%= f.hidden_field :transportation_origin, id: 'transportation_origin_hidden' %>
+      
   
       
       <!-- 経由地の入力欄 -->
