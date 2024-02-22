@@ -1,3 +1,15 @@
+.field:before {
+    background-image: url("https://as1.ftcdn.net/v2/jpg/03/57/33/96/1000_F_357339685_kL4t7I5t1ZQv7vERZDqfL8tfP29dWmi6.jpg");
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+    filter: blur(3px);
+    z-index: -1;
+}
 .field input[type="text"] {
     width: 50vw;
     height: 5vh;
@@ -16,19 +28,6 @@
     overflow: hidden;
     z-index: 0;
   }
-  
-  .background:before {
-    background-size: cover;
-    background-image: url("https://cdn.discordapp.com/attachments/984115670138642502/1210105990138175518/kyoutoroad.jpeg?ex=65e95a06&is=65d6e506&hm=526a8fde9b282acdff3726556de2edb8c72c4f8ba0793f583ce5d28df2f0d6bd&");
-    content: "";
-    position: absolute;
-    top: -3px;
-    bottom: -3px;
-    left: -3px;
-    right: -3px;
-    filter: blur(3px);
-    z-index: -1;
-  }
 
 #text_transportation{
     margin-left: 44vw;
@@ -42,7 +41,7 @@
 #add_waypoint {
   margin-top: 2vh;
   width: 3vw;
-  height: 5vh;
+  height: 3vw;
   border-radius: 50%;
   padding: 8px 12px;
   margin-left: 48vw;

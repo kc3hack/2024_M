@@ -3,7 +3,7 @@
     <div class="field">
       <%= f.label :start ,style: "display: none;" %>
       <%= f.text_field:start, placeholder:'出発地'%>
-      <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: false } ,id: "transportation"%>
+      <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: true } ,id: "transportation"%>
       <br>
 
       
@@ -15,7 +15,7 @@
         <%= f.text_field :waypoints, placeholder: "経由地", style: "display: none;" %>
       </div>
 
-      <%= button_tag "➕", type: "button", id: "add_waypoint" %>
+      <%= button_tag "+", type: "button", id: "add_waypoint" %>
       <br>
 
       <%= f.label :destination, style: "display: none;"%>
@@ -27,7 +27,6 @@
     <br>
   </div>
 <% end %>
-<%= link_to "Route一覧に戻る", courses_index_path %>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
