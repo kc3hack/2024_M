@@ -103,6 +103,9 @@
 			origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
 			destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
 			travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+			// origin: start,
+			// destination: destination,
+			// travelMode: google.maps.TravelMode.DRIVING
 		}, timeRequired)
 		directionsService.route({
 			origin: routes[count],
