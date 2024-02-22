@@ -36,11 +36,11 @@
 	let count = 0;
 	const history = "";
 
-	console.log(transportation + "b");
 	transportations.push(transportation);
 	for(var i in tmps){
 		transportations.push(tmps[i])
 	}
+	console.log(transportations)
 
 	function resolveAfter2Seconds() {
 		return new Promise((resolve) => {
@@ -101,48 +101,65 @@
 
 	}
 	function setLocation(ma){
-		console.log(ma);
-		console.log(transportations);
     	// 所要時間取得
-		if(transportations[count]==="")
-		distanceMatrixservice.getDistanceMatrix({
-			origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
-			destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
-			travelMode: google.maps.TravelMode.DRIVING, // 移動手段
-		}, timeRequired)
-		directionsService.route({
-			origin: routes[count],
-			destination: routes[count+1],
-			travelMode: google.maps.TravelMode.DRIVING
-		}, function(response, status) {
-			if (status === google.maps.DirectionsStatus.OK) {
-				// ルート検索の結果を地図上に描画
-				console.log("a");
-				directionsRenderer.setMap(map);
-				directionsRenderer.setDirections(response);
-			}
-		});
+		if(transportations[count]==="walking"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.WALKING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.WALKING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					console.log("a");
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}else if(transportations[count]==="driving"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.DRIVING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					console.log("a");
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}
 	}
 
-	function timeRequired(response, status) {
+	async function timeRequired(response, status) {
 		if(status == "OK") {
 			var origins = response.originAddresses;
 			var destinations = response.destinationAddresses;
-			console.log(origins);
-			console.log(destinations);
 			for (var i = 0; i < origins.length; i++) {
 				var results = response.rows[i].elements;
 				for (var j = 0; j < results.length; j++) {
 					var element = results[j];
+					console.log(element)
 					var distance = element.distance.text;
 					var duration = element.duration.text;
 					var from = origins[i];
 					var to = destinations[j];
 				}
 			}
-			
+			const result = await resolveAfter2Seconds();
 			var routeTime = document.getElementById("route-time");
 			routeTime.innerHTML = "およそ" + duration + "で着きます"
+			// result = await resolveAfter2Seconds();
 		}
 	}
 </script>
