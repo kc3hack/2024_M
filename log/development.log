@@ -5225,3 +5225,1473 @@ Processing by RootController#login as HTML
 Completed 200 OK in 13ms (Views: 10.3ms | Allocations: 2336)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240220082808)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240220082808"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:30:22 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 297)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 619)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 7138)
+  Rendered layout layouts/application.html.erb (Duration: 285.4ms | Allocations: 83872)
+Completed 200 OK in 304ms (Views: 289.8ms | ActiveRecord: 0.4ms | Allocations: 92951)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:30:26 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 5429)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 7566)
+Completed 200 OK in 27ms (Views: 16.6ms | ActiveRecord: 2.4ms | Allocations: 9940)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-20 17:30:44 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1919)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3779)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 4433)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 17:30:46 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 138)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2071)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2627)
+
+
+Started GET "/courses/newAccount" for ::1 at 2024-02-20 17:30:51 +0900
+Processing by CoursesController#newAccount as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/newAccount.html.erb within layouts/application
+  Rendered courses/newAccount.html.erb within layouts/application (Duration: 0.9ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2066)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2621)
+
+
+Started GET "/courses/mypageRecommend" for ::1 at 2024-02-20 17:30:53 +0900
+Processing by CoursesController#mypageRecommend as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/mypageRecommend.html.erb within layouts/application
+  Rendered courses/mypageRecommend.html.erb within layouts/application (Duration: 0.7ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2066)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2621)
+
+
+Started GET "/courses/newAccount" for ::1 at 2024-02-20 17:30:54 +0900
+Processing by CoursesController#newAccount as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/newAccount.html.erb within layouts/application
+  Rendered courses/newAccount.html.erb within layouts/application (Duration: 0.2ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1968)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2416)
+
+
+Started GET "/courses/mypageRecommend" for ::1 at 2024-02-20 17:30:56 +0900
+Processing by CoursesController#mypageRecommend as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/mypageRecommend.html.erb within layouts/application
+  Rendered courses/mypageRecommend.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1968)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2416)
+
+
+Started GET "/courses/siteTop.html" for ::1 at 2024-02-20 17:30:59 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1461)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3286)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3732)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 17:31:00 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1968)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2414)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 17:32:23 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 1.6ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2870)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 4239)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:32:42 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2693)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4788)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 6579)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-02-20 17:37:21 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 6712)
+  Rendered layout layouts/application.html.erb (Duration: 161.8ms | Allocations: 59579)
+Completed 200 OK in 175ms (Views: 163.1ms | ActiveRecord: 1.4ms | Allocations: 65100)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-20 17:37:26 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1829)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3737)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4394)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 17:37:28 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2718)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3368)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:37:39 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 272)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 613)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 5406)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 7555)
+Completed 200 OK in 26ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 13406)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 17:37:44 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2194)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 2712)
+
+
+Started GET "/courses/login.html" for ::1 at 2024-02-20 17:42:34 +0900
+Processing by CoursesController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/login.html.erb within layouts/application
+  Rendered courses/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 180)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2573)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3947)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-20 17:42:42 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2062)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3941)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4546)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-20 17:43:04 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2259)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4402)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 5768)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToUsers (20240220084933)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240220084933"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/siteTop" for ::1 at 2024-02-20 17:51:11 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 20.6ms | Allocations: 8608)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 11795)
+Completed 200 OK in 44ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 15850)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-20 17:51:50 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1962)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4785)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 6230)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:51:52 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 5727)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8130)
+Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 0.5ms | Allocations: 15092)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_in" for ::1 at 2024-02-20 17:54:11 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 689)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3093)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 369)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 6014)
+Completed 200 OK in 29ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 8785)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:54:16 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2454)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4856)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 6291)
+
+
+Started POST "/users" for ::1 at 2024-02-20 17:54:32 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@exam.com", "name"=>"tako", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@exam.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@exam.com"], ["encrypted_password", "$2a$12$2Ie4xM/Fbv6hkWSdcJjRserMn9.qoh.TIpxWgRDoC5OC2SfUo2bju"], ["created_at", "2024-02-20 08:54:32.558534"], ["updated_at", "2024-02-20 08:54:32.558534"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 465ms (ActiveRecord: 6.5ms | Allocations: 11160)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:54:32 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5325)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:3
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1506)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 9111)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 1.4ms | Allocations: 11327)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-02-20 17:54:40 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 17ms (ActiveRecord: 0.4ms | Allocations: 2850)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:54:40 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2283)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4722)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 5334)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-20 17:54:50 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1363)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3556)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4244)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-20 17:54:57 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 426)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1299)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3467)
+Completed 200 OK in 447ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4155)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:55:10 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1566)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3759)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4364)
+
+
+Started POST "/users" for ::1 at 2024-02-20 17:55:22 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aiueo@gmail.com", "name"=>"tako", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aiueo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "aiueo@gmail.com"], ["encrypted_password", "$2a$12$AzzrPESKZwOPjc.SwWdyr./v6jGX.OCYdm2q2/7rNU8lPyR.tmSS6"], ["created_at", "2024-02-20 08:55:22.830050"], ["updated_at", "2024-02-20 08:55:22.830050"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 449ms (ActiveRecord: 2.1ms | Allocations: 6253)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:55:22 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2185)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:3
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1226)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5458)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms | Allocations: 5976)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-02-20 17:55:27 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.2ms | Allocations: 1900)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:55:27 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2187)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4458)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 4970)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-20 17:55:31 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1312)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3509)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-20 17:55:38 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1298)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3476)
+Completed 200 OK in 433ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4142)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-20 17:56:14 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1565)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3758)
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 4362)
+
+
+Started POST "/users" for ::1 at 2024-02-20 17:56:27 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aiueo@gmail.com", "name"=>"tako2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aiueo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 557)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2582)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4774)
+Completed 422 Unprocessable Entity in 453ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 10274)
+
+
+Started POST "/users" for ::1 at 2024-02-20 17:56:48 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"takotako@gmail.com", "name"=>"tako", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "takotako@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "takotako@gmail.com"], ["encrypted_password", "$2a$12$jPN.j/SfhUu24WBkWDTuv.TmTjP2GyxmXOII0bcmdctIRh9J4wUk6"], ["created_at", "2024-02-20 08:56:48.839135"], ["updated_at", "2024-02-20 08:56:48.839135"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 446ms (ActiveRecord: 2.1ms | Allocations: 6256)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:56:48 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2185)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:3
+  Rendered layouts/_header.html.erb (Duration: 5.9ms | Allocations: 1218)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5450)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 5968)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-02-20 17:56:53 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 6ms (ActiveRecord: 0.2ms | Allocations: 1897)
+
+
+Started GET "/" for ::1 at 2024-02-20 17:56:53 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2187)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4458)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 4970)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-20 17:56:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1312)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3509)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-20 17:57:03 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako2", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako2", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1298)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3476)
+Completed 200 OK in 444ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4140)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/sign_in" for ::1 at 2024-02-20 17:59:43 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako2", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako2", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1298)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3466)
+Completed 200 OK in 436ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4130)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-20 17:59:51 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1298)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3466)
+Completed 200 OK in 444ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 4134)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-20 17:59:53 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1298)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3466)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4097)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-21 00:07:29 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1565)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3775)
+Completed 200 OK in 13ms (Views: 9.6ms | Allocations: 4378)
+
+
+Started POST "/users" for ::1 at 2024-02-21 00:07:53 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@exam.com", "name"=>"tako3", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@exam.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 905)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3456)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 5665)
+Completed 422 Unprocessable Entity in 461ms (Views: 8.9ms | ActiveRecord: 3.4ms | Allocations: 12328)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-21 00:08:03 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1312)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 3509)
+Completed 200 OK in 41ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-21 00:08:10 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1298)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3476)
+Completed 200 OK in 459ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4142)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-21 00:14:31 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 211)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1622)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4058)
+Completed 200 OK in 32ms (Views: 7.4ms | ActiveRecord: 2.6ms | Allocations: 10272)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-21 00:14:38 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 481)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :name[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1299)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3467)
+Completed 200 OK in 458ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4211)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/siteTop" for ::1 at 2024-02-21 00:31:37 +0900
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 20.4ms | Allocations: 7628)
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 599)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 11009)
+Completed 200 OK in 38ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 16146)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-21 00:31:51 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5326)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 7746)
+Completed 200 OK in 26ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 14982)
+
+
+Started POST "/users" for ::1 at 2024-02-21 00:32:16 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 626)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2001)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 178)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4333)
+Completed 422 Unprocessable Entity in 454ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 9118)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/siteTop" for ::1 at 2024-02-21 00:36:06 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 16.5ms | Allocations: 7550)
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 599)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 10935)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 15800)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-21 00:36:09 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 5326)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7745)
+Completed 200 OK in 27ms (Views: 16.4ms | ActiveRecord: 1.0ms | Allocations: 14957)
+
+
+Started POST "/users" for ::1 at 2024-02-21 00:36:19 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 626)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2001)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 178)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4333)
+Completed 422 Unprocessable Entity in 447ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 9141)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-21 00:36:40 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1326)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3521)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 4233)
+
+
+Started POST "/users" for ::1 at 2024-02-21 00:44:27 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 449)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1734)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3926)
+Completed 422 Unprocessable Entity in 568ms (Views: 8.1ms | ActiveRecord: 4.1ms | Allocations: 7030)
+
+
+Started POST "/users" for ::1 at 2024-02-21 00:44:28 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 835)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2624)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4816)
+Completed 422 Unprocessable Entity in 11ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 6714)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-21 00:44:50 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 288)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2331)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4748)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 6463)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-21 00:45:01 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "tako"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.4ms | Allocations: 2951)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 174)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1387)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3671)
+Completed 200 OK in 471ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4447)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/siteTop" for ::1 at 2024-02-21 00:46:53 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 17.1ms | Allocations: 7251)
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 599)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 10689)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 15479)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-21 00:46:56 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 5326)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 7746)
+Completed 200 OK in 35ms (Views: 16.5ms | ActiveRecord: 0.9ms | Allocations: 14984)
+
+
+Started POST "/users" for ::1 at 2024-02-21 00:47:06 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 626)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2001)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 178)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4333)
+Completed 422 Unprocessable Entity in 450ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 9119)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start" text, "destination" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "waypoints" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "routes"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start" text, "goal" text, "waypoints" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240220084933)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240217155812),
+(20240218141436),
+(20240218142247),
+(20240218165118),
+(20240220082808);
+
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-02-20 15:57:19.479487"], ["updated_at", "2024-02-20 15:57:19.479487"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3c317e47745797449e3d547e2fb558349df8bb67"], ["created_at", "2024-02-20 15:57:19.485452"], ["updated_at", "2024-02-20 15:57:19.485452"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start" text, "destination" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "waypoints" text)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "routes"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start" text, "goal" text, "waypoints" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240220084933)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240217155812),
+(20240218141436),
+(20240218142247),
+(20240218165118),
+(20240220082808);
+
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-02-20 15:57:19.565031"], ["updated_at", "2024-02-20 15:57:19.565031"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2024-02-20 15:57:19.568859"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3c317e47745797449e3d547e2fb558349df8bb67"], ["created_at", "2024-02-20 15:57:19.572555"], ["updated_at", "2024-02-20 15:57:19.572555"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-02-22 13:11:44 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 4155)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 4253)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.8ms | Allocations: 11229)
+
+
+  
+ActionView::Template::Error (undefined method `start' for nil:NilClass):
+    26: 
+    27: 	var target = document.getElementById('map'); //マップを表示する要素を指定
+    28: 	var address = "大阪駅"; //住所を指定
+    29: 	var start = "<%= @courses[-1].start %>";
+    30: 	var destination = "<%= @courses[-1].destination %>";
+    31: 	var geocoder = new google.maps.Geocoder();
+    32: 	var marker = [];
+  
+app/views/courses/index.html.erb:29
+Started GET "/siteTop" for ::1 at 2024-02-22 13:12:03 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/siteTop"):
+  
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 13:12:24 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 20.6ms | Allocations: 6919)
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 10166)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 10806)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 13:12:31 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1464)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3618)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4075)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-22 13:16:02 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 268)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 5105)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7508)
+Completed 200 OK in 43ms (Views: 22.0ms | ActiveRecord: 2.3ms | Allocations: 14608)
+
+
+Started POST "/users" for ::1 at 2024-02-22 13:16:22 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako22", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 626)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2000)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 172)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4323)
+Completed 422 Unprocessable Entity in 485ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 8711)
+
+
+Started POST "/users" for ::1 at 2024-02-22 13:16:33 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako@22", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 449)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1734)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3928)
+Completed 422 Unprocessable Entity in 447ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 5935)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:08:15 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 13.5ms | Allocations: 7230)
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 599)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 10647)
+Completed 200 OK in 33ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 15260)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-22 14:08:17 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5326)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 7746)
+Completed 200 OK in 24ms (Views: 14.7ms | ActiveRecord: 0.5ms | Allocations: 14997)
+
+
+Started POST "/users" for ::1 at 2024-02-22 14:08:31 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tako", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 626)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2001)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 178)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4333)
+Completed 422 Unprocessable Entity in 463ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 11893)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-02-22 14:10:49 +0900
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4606)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4837)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.7ms | Allocations: 11252)
+
+
+  
+ActionView::Template::Error (undefined method `start' for nil:NilClass):
+    26: 
+    27: 	var target = document.getElementById('map'); //マップを表示する要素を指定
+    28: 	var address = "大阪駅"; //住所を指定
+    29: 	var start = "<%= @courses[-1].start %>";
+    30: 	var destination = "<%= @courses[-1].destination %>";
+    31: 	var geocoder = new google.maps.Geocoder();
+    32: 	var marker = [];
+  
+app/views/courses/index.html.erb:29
+Started GET "/" for ::1 at 2024-02-22 14:10:49 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2881)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2953)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3536)
+
+
+  
+ActionView::Template::Error (undefined method `start' for nil:NilClass):
+    26: 
+    27: 	var target = document.getElementById('map'); //マップを表示する要素を指定
+    28: 	var address = "大阪駅"; //住所を指定
+    29: 	var start = "<%= @courses[-1].start %>";
+    30: 	var destination = "<%= @courses[-1].destination %>";
+    31: 	var geocoder = new google.maps.Geocoder();
+    32: 	var marker = [];
+  
+app/views/courses/index.html.erb:29
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:10:59 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 20.3ms | Allocations: 6941)
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 576)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 10197)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 10803)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-22 14:11:01 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 270)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5727)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 8147)
+Completed 200 OK in 40ms (Views: 20.1ms | ActiveRecord: 0.6ms | Allocations: 15245)
+
+
+Started POST "/users" for ::1 at 2024-02-22 14:11:16 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@exam.com", "name"=>"tako", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test1@exam.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?)[0m  [["email", "test1@exam.com"], ["encrypted_password", "$2a$12$5OjXn1KcG5cOAUTEh3nRZeQthCEn8d0NxyogsnYof0Kbi9CbbbpHm"], ["created_at", "2024-02-22 05:11:16.699472"], ["updated_at", "2024-02-22 05:11:16.699472"], ["name", "tako"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 464ms (ActiveRecord: 3.2ms | Allocations: 12712)
+
+
+Started GET "/" for ::1 at 2024-02-22 14:11:16 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:29
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2802)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2876)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 3434)
+
+
+  
+ActionView::Template::Error (undefined method `start' for nil:NilClass):
+    26: 
+    27: 	var target = document.getElementById('map'); //マップを表示する要素を指定
+    28: 	var address = "大阪駅"; //住所を指定
+    29: 	var start = "<%= @courses[-1].start %>";
+    30: 	var destination = "<%= @courses[-1].destination %>";
+    31: 	var geocoder = new google.maps.Geocoder();
+    32: 	var marker = [];
+  
+app/views/courses/index.html.erb:29
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:13:27 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 17.7ms | Allocations: 7839)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:3
+  Rendered layouts/_header.html.erb (Duration: 22.9ms | Allocations: 7519)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 18169)
+Completed 200 OK in 55ms (Views: 45.3ms | ActiveRecord: 1.3ms | Allocations: 23300)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-02-22 14:13:31 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/courses/siteTop
+Completed 303 See Other in 9ms (ActiveRecord: 0.1ms | Allocations: 4561)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:13:31 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1584)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 302)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3881)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4416)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-22 14:13:52 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 612)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4803)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7206)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 9275)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:13:56 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1464)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3614)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4141)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_up" for ::1 at 2024-02-22 14:15:48 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 4.1ms | Allocations: 739)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 619)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 7088)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 15418)
+Completed 200 OK in 67ms (Views: 55.4ms | ActiveRecord: 0.3ms | Allocations: 25874)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:15:53 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2010)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 268)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4295)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 5633)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:15:55 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1461)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3600)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 4106)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-22 14:15:58 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1641)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3834)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4495)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:16:01 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1461)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3604)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4064)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-02-22 14:16:15 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 114)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1566)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3761)
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 4405)
+
+
+Started POST "/users" for ::1 at 2024-02-22 14:16:42 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test2@gmail.com", "name"=>"takoch", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?)[0m  [["email", "test2@gmail.com"], ["encrypted_password", "$2a$12$BmtWaly5VAg1.Q2ebTPtxuwIhMZVBONzvApBrybZB/0jWD/DkZzPe"], ["created_at", "2024-02-22 05:16:43.030818"], ["updated_at", "2024-02-22 05:16:43.030818"], ["name", "takoch"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/siteTop
+Completed 303 See Other in 538ms (ActiveRecord: 6.1ms | Allocations: 13037)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:16:43 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1574)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:3
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 1634)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5184)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 5729)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-02-22 14:16:49 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/courses/siteTop
+Completed 303 See Other in 7ms (ActiveRecord: 0.1ms | Allocations: 3068)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:16:49 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1584)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 222)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3801)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4336)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-02-22 14:16:51 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 288)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2330)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4734)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 6208)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-02-22 14:16:58 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"takoch", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "takoch"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/courses/siteTop
+Completed 303 See Other in 445ms (ActiveRecord: 0.3ms | Allocations: 3506)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:16:59 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1576)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:3
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1239)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4789)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 5309)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-02-22 14:17:01 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/courses/siteTop
+Completed 303 See Other in 6ms (ActiveRecord: 0.1ms | Allocations: 1989)
+
+
+Started GET "/courses/siteTop" for ::1 at 2024-02-22 14:17:01 +0900
+Processing by CoursesController#siteTop as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/siteTop.html.erb within layouts/application
+  Rendered courses/siteTop.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1461)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 214)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3621)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 4083)
+
+
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
