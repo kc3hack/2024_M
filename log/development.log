@@ -86001,6 +86001,11 @@ Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 4751)
   [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
   [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
   [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+<<<<<<< HEAD
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+=======
+>>>>>>> origin
 >>>>>>> origin
 >>>>>>> origin
 [dotenv] Set [36mGOOGLE_MAP_KEY[0m
