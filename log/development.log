@@ -86263,3 +86263,416 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 2559)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-02-22 18:37:01 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 7507)
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 8973)
+Completed 200 OK in 28ms (Views: 15.5ms | ActiveRecord: 0.9ms | Allocations: 15826)
+
+
+Started GET "/courses/new" for ::1 at 2024-02-22 18:37:05 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 31.2ms | Allocations: 11700)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 12199)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 13015)
+
+
+Started POST "/courses" for ::1 at 2024-02-22 18:37:12 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"大阪駅", "transportation"=>"walking", "waypoints"=>"大阪難波駅", "transportation_origin"=>"walking", "destination"=>"京都"}, "waypoints"=>"大阪難波駅", "transportation_1.5"=>"walking"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (2.1ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation", "transportation_origin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["start", "大阪駅"], ["destination", "京都"], ["created_at", "2024-02-22 09:37:12.836134"], ["updated_at", "2024-02-22 09:37:12.836134"], ["waypoints", "大阪難波駅"], ["transportation", "walking"], ["transportation_origin", "walking"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 3.6ms | Allocations: 4129)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:37:12 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1569)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 203)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2030)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 2588)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:56:28 +0900
+Processing by CoursesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2257)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3352)
+Completed 200 OK in 16ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 5595)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:57:13 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2178)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3272)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 4870)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:57:39 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2169)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3263)
+Completed 200 OK in 22ms (Views: 13.2ms | ActiveRecord: 0.2ms | Allocations: 4845)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:58:03 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2175)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3270)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.6ms | Allocations: 4860)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:58:20 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2170)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3264)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.2ms | Allocations: 4846)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:58:37 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2169)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3263)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 4845)
+
+
+Started GET "/" for ::1 at 2024-02-22 18:59:01 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2169)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3263)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 4845)
+
+
+Started GET "/" for ::1 at 2024-02-22 21:39:37 +0900
+Processing by CoursesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2250)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3345)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 5615)
+
+
+Started GET "/" for ::1 at 2024-02-22 21:40:10 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2171)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3265)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 4847)
+
+
+Started GET "/" for ::1 at 2024-02-22 21:40:30 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2171)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3265)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 4847)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:07:27 +0900
+Processing by CoursesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2255)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3350)
+Completed 200 OK in 12ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 5617)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:08:32 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2181)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3275)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 4873)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:08:55 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2172)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3266)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 0.2ms | Allocations: 4848)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:41:44 +0900
+Processing by CoursesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/courses_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2251)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3346)
+Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 1.1ms | Allocations: 5613)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:43:50 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2172)
+  Rendered layouts/_header.html.erb (Duration: 5.1ms | Allocations: 443)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3267)
+Completed 200 OK in 19ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 4850)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:44:04 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2179)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 3274)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.5ms | Allocations: 4864)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:44:26 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2172)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3266)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 4848)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:44:55 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2172)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3266)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.4ms | Allocations: 4848)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:45:57 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2172)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3266)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 4848)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:46:21 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2169)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3263)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.7ms | Allocations: 4845)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:48:05 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2177)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3272)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 4861)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:50:16 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2188)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3283)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 4873)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:50:35 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2180)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3275)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 4857)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:51:14 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2179)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3273)
+Completed 200 OK in 16ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 4855)
+
+
+Started GET "/" for ::1 at 2024-02-22 22:51:35 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:9
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:27
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2177)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3271)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 4853)
+
+
