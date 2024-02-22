@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   get 'courses/new' => 'courses#new'
 
+  get 'posts/posts_index' => 'posts#posts_index'
+
   resources :courses
 end
