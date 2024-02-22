@@ -1,31 +1,28 @@
 <%= form_for @course do |f| %>
   <%= stylesheet_link_tag "new", :media => "all" %>
-    <div class="field">
-      <%= f.label :start ,style: "display: none;" %>
-      <%= f.text_field:start, placeholder:'出発地'%>
-      <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: false } ,id: "transportation"%>
-      <br>
+  <div class="field">
+    <%= f.label :start ,style: "display: none;" %>
+    <%= f.text_field:start, placeholder:'出発地'%>
+    <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]]), { include_blank: false } ,id: "transportation"%>
+    <br>
 
-      
-  
-      
-      <!-- 経由地の入力欄 -->
-      <div id="waypoints_fields" >
-        <%= f.label :waypoint ,style: "display: none;" %>
-        <%= f.text_field :waypoints, placeholder: "経由地", style: "display: none;" %>
-      </div>
+    <!-- 経由地の入力欄 -->
+    <div id="waypoints_fields" >
+      <%= f.label :waypoint ,style: "display: none;" %>
+      <%= f.text_field :waypoints, placeholder: "経由地", style: "display: none;" %>
+    </div>
 
-      <%= button_tag "➕", type: "button", id: "add_waypoint" %>
-      <br>
+    <!-- 隠しフィールド：transportation_origin -->
+    <%= f.hidden_field :transportation_origin, id: "transportation_origin_hidden" %>
 
-      <%= f.label :destination, style: "display: none;"%>
-      <%= f.text_field :destination, placeholder:'目的地'%>
-      <br>
-      </div>
-  <%= f.submit "経路検索" ,id: "search_route"%>
-  
+    <%= button_tag "➕", type: "button", id: "add_waypoint" %>
+    <br>
+
+    <%= f.label :destination, style: "display: none;" %>
+    <%= f.text_field :destination, placeholder:'目的地'%>
     <br>
   </div>
+  <%= f.submit "経路検索" ,id: "search_route"%>
 <% end %>
 <%= link_to "Route一覧に戻る", courses_index_path %>
 
@@ -34,13 +31,14 @@
     var waypointsFields = document.getElementById('waypoints_fields');
     var addWaypointButton = document.getElementById('add_waypoint');
     var form = document.querySelector('form');
+    var transportationOriginHiddenField = document.getElementById('transportation_origin_hidden');
 
-  addWaypointButton.addEventListener('click', function() {
-    var newInput = document.createElement('input');
-    newInput.type = 'text';
-    newInput.name = 'waypoints';
-    newInput.placeholder = '経由地';
-    waypointsFields.appendChild(newInput);
+    addWaypointButton.addEventListener('click', function() {
+      var newInput = document.createElement('input');
+      newInput.type = 'text';
+      newInput.name = 'waypoints';
+      newInput.placeholder = '経由地';
+      waypointsFields.appendChild(newInput);
 
       // 一意の名前を持つ新しいselect要素を作成
       var newSelect = document.createElement('select');
@@ -74,9 +72,9 @@
       }).join(',');
 
       // 新しいカラム transportation_origin の値を隠しフィールドに設定
-      var transportationOriginHiddenField = document.getElementById('transportation_origin_hidden');
       if (transportationOriginHiddenField) {
-        transportationOriginHiddenField.value = document.querySelector('select[name="course[transportation_origin]"]').value;
+        var selectedTransportation = document.querySelector('select[name="course[transportation]"]').value;
+        transportationOriginHiddenField.value = selectedTransportation;
       } else {
         console.error('Transportation Origin hidden field not found');
       }
