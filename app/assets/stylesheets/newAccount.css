@@ -11,11 +11,11 @@ box-sizing: border-box;
 margin: 20px auto;
 width: 300px;
 }
-.login-screen {
+/* .login-screen {
 background-color: #FFF;
 padding: 20px;
 border-radius: 5px
-}
+} */
 
 .app-title {
 margin: 2vh;

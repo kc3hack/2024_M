@@ -1,57 +1,91 @@
-HTML CSSResult Skip Results Iframe
-EDIT ON
-* {
-box-sizing: border-box;
+HTML CSSResult Skip Results Iframe EDIT ON * {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
 }
 
 *:focus {
   outline: none;
 }
-.login {
-margin: 20px auto;
-width: 300px;
+.background {
+  background-position: center;
+  text-align: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
-.login-screen {
+
+.background:before {
+  background-size: cover;
+  background-image: url("https://as1.ftcdn.net/v2/jpg/04/88/34/62/1000_F_488346274_IsoRxPXOFTAfAxN9K3hTpdkDNlkY1VMw.jpg");
+  content: "";
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  left: -3px;
+  right: -3px;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.login {
+  text-align: center;
+  margin: auto;
+  width: 300px;
+}
+/* .login-screen {
 background-color: #FFF;
 padding: 20px;
 border-radius: 5px
-}
+} */
 
 .app-title {
-margin: 2vh;
-text-align: center;
-color: #060606;
+  /* margin-top: 20vh; */
+  margin-bottom: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  text-align: center;
+  color: #060606;
 }
 
 .login-form {
-text-align: center;
+  text-align: center;
 }
 .control-group {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 input {
-text-align: center;
-background-color: #fdfcfc;
-border: 2px solid transparent;
-border-color: #939292;
-border-radius: 3px;
-font-size: 16px;
-font-weight: 200;
-padding: 10px 0;
-width: 250px;
-transition: border .5s;
+  text-align: center;
+  background-color: #fdfcfc;
+  border: 2px solid transparent;
+  border-color: #939292;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 10px 0;
+  width: 250px;
+  transition: border 0.5s;
 }
 
 input:focus {
-border: 2px solid #3498DB;
-box-shadow: none;
+  border: 2px solid #3498db;
+  box-shadow: none;
 }
 
 .btn {
   margin-top: 2vh;
   border: 2px solid transparent;
-  background: #3498DB;
+  background: #3498db;
   color: #ffffff;
   font-size: 16px;
   line-height: 25px;
@@ -67,7 +101,7 @@ box-shadow: none;
 }
 
 .btn:hover {
-  background-color: #2980B9;
+  background-color: #2980b9;
 }
 
 .login-link {
@@ -77,21 +111,21 @@ box-shadow: none;
   margin-top: 12px;
 }
 .btnNew {
-    border-left: 5vw;
-    margin-top: 1vh;
-    border: 2px solid transparent;
-    background: rgb(17, 176, 197);
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 25px;
-    padding: 10px 0;
-    text-decoration: none;
-    text-shadow: none;
-    border-radius: 3px;
-    box-shadow: none;
-    transition: 0.25s;
-    display: block;
-    width: 250px;   
-    margin-left: auto;
-    margin-right: auto
-  }
+  border-left: 5vw;
+  margin-top: 1vh;
+  border: 2px solid transparent;
+  background: rgb(17, 176, 197);
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
