@@ -4,12 +4,44 @@ EDIT ON
 box-sizing: border-box;
 }
 
+h1 {
+    margin: 0px;
+  }
+  
+body {
+    margin: 0px;
+}
+
 *:focus {
   outline: none;
 }
+.background2 {
+    background-position: center;
+    text-align: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.background2:before {
+    background-size: cover;
+    background-image: url("https://cdn.discordapp.com/attachments/984115670138642502/1209538510432903199/kiyomizudera2.jpeg?ex=65e74985&is=65d4d485&hm=a45037b85374f17961edfde4a473ad7f1e05ca894344eec8d64775d690d6fde4&");
+    content: "";
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+    filter: blur(3px);
+    z-index: -1;
+  }
 .login {
-margin: 20px auto;
-width: 300px;
+    text-align: center;
+    margin-top: 20vh;
+    margin-left: 40vw;
+    width: 300px;
 }
 /* .login-screen {
 background-color: #FFF;
@@ -18,9 +50,12 @@ border-radius: 5px
 } */
 
 .app-title {
-margin: 2vh;
-text-align: center;
-color: #060606;
+  /* margin-top: 20vh; */
+  margin-bottom: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  text-align: center;
+  color: #060606;
 }
 
 .login-form {

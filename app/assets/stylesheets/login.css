@@ -26,7 +26,7 @@ body {
 
 .background:before {
   background-size: cover;
-  background-image: url("https://as1.ftcdn.net/v2/jpg/04/88/34/62/1000_F_488346274_IsoRxPXOFTAfAxN9K3hTpdkDNlkY1VMw.jpg");
+  background-image: url("https://cdn.discordapp.com/attachments/984115670138642502/1209538037818859620/husimiinari2.jpeg?ex=65e74914&is=65d4d414&hm=261d05f5d1ca0a86f94518bab3d8a66b542d8888f58802240cc14b7f78511c59&");
   content: "";
   position: absolute;
   top: -3px;
@@ -39,15 +39,16 @@ body {
 
 .login {
   text-align: center;
-  margin: auto;
+  margin-top: 20vh;
+  margin-left: 40vw;
   width: 300px;
 }
 /* .login-screen {
 background-color: #FFF;
-padding: 20px;
-border-radius: 5px
 } */
-
+.border{
+    background-color: #060606;
+}
 .app-title {
   /* margin-top: 20vh; */
   margin-bottom: 2vh;
