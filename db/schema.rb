@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_21_094550) do
+ActiveRecord::Schema.define(version: 2024_02_22_151244) do
 
   create_table "courses", force: :cascade do |t|
     t.text "start"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2024_02_21_094550) do
     t.text "waypoints"
     t.text "transportation"
     t.text "transportation_origin"
+    t.text "history"
   end
 
   create_table "routes", force: :cascade do |t|
