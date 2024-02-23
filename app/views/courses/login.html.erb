@@ -7,27 +7,19 @@
   </head>
   <body>
     <div class="background">
+      <!-- サイトトップボタン -->
+      <button class="siteTopButton" onclick="location.href='/courses/siteTop.html'">サイトトップ</button>
       <div class="login">
         <div style="background: #ffffff; border: #060606 double 6px; border-radius:15px; font-size: 100%;">
           <div class="login-screen">
-            <% if user_signed_in? %>
-            <ul>
-              <li><%= button_to "LogOut", destroy_user_session_path, method: :delete, class: "" %></li>
-            </ul>
-          <% else %>
-            <ul>
-              <li><%= link_to "LogIn", new_user_session_path, class: "" %></li>
-              <li><%= link_to "SignUp", new_user_registration_path, class: "" %></li>
-            </ul>
-          <% end %>
             <div class="app-title">
               <h1>ログイン</h1>
               <% if user_signed_in? %>
-            <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-nav" %>
-            <% else %>
+                <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-nav" %>
+              <% else %>
                 <%= link_to "ログイン", new_user_session_path, class: "btn" %>
                 <%= link_to "新規作成", new_user_registration_path, class: "btnNew" %>
-            <% end %>
+              <% end %>
             </div>
             </div>
           </div>
