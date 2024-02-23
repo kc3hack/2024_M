@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root 'courses#index'
+  root 'courses#siteTop'
 
   get 'courses/siteTop' => 'courses#siteTop'
 
@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get 'courses/mypageHistory' => 'courses#mypageHistory'
 
-  get 'courses/index' => 'courses#index'
+  get 'courses/index' => 'post/new'
+
+  # get 'courses/index' => 'courses#index'
 
   get 'courses/new' => 'courses#new'
 
