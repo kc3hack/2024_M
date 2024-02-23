@@ -14,9 +14,7 @@ Rails.application.routes.draw do
 
   get 'courses/mypageHistory' => 'courses#mypageHistory'
 
-  get 'courses/index' => 'post/new'
-
-  # get 'courses/index' => 'courses#index'
+  # get 'courses/index' => 'post/new'
 
   get 'courses/new' => 'courses#new'
 
@@ -24,7 +22,15 @@ Rails.application.routes.draw do
 
   get 'posts/new' => 'posts#new'
 
+  post 'posts/index' => 'posts#index'
+
+  get 'users/show' => 'users#show'
+
   resources :courses
 
   resources :posts
+
+  # devise_for :users
+
+  resources :users, only: [:show]
 end

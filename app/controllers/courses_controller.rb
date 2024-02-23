@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
   end
 
 	def result
+    @course = Post.all
 	end
 
 	def create
