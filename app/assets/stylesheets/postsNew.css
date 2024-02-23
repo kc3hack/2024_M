@@ -1,0 +1,19 @@
+.button_next {
+    height: 4vh;
+    background-color: #ffffff;
+}
+
+#route-time {
+    font-size: 23px;
+}
+
+#post_history {
+    width: 80vw;
+    height: 5vh;
+    font-size: large;
+}
+
+.result input[type="submit"] {
+    height: 4vh;
+    background-color: #ffffff;
+}
