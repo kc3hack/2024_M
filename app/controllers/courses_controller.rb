@@ -8,13 +8,17 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
+  def siteTop
+    @course = Post.all
+  end
+
 	def result
 	end
 
 	def create
     course = Course.new(course_params)
     if course.save
-      redirect_to :action => "index"
+      redirect_to  controller: :posts, action: :new
     else
       redirect_to :action => "new"
     end

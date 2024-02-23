@@ -27,10 +27,6 @@
   .box-email {
     margin-bottom: 13px;
   }
-
-  .box-name {
-    margin-bottom: 13px;
-  }
   
   .box-password {
     margin-bottom: 22px;
@@ -123,4 +119,3 @@
   .box-newusr a:hover {
     background: #e7e9ec;
   }
-  

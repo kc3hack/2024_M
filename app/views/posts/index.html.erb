@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>関西の県</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .panel-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .panel {
+            flex: 1 0 calc(25% - 20px);
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .like-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .post-text {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .divider {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .time-slot {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <% @history.each do |t| %>
+      <% data = t.history.split(',') %>
+      <div class="time-slot">
+        <h2><%= data[0] %> - <%= data[2] %></h2>
+        <div class="divider"></div>
+
+        <div class="panel">
+          <h3><%= data[0] %></h3>
+          <p>移動手段: <%= data[1] %></p>
+        </div>
+
+        <div class="panel">
+          <h3><%= data[3] %></h3>
+          <p>移動手段: <%= data[4] %></p>
+        </div>
+
+        <!-- 必要に応じて他の情報を表示 -->
+
+      </div>
+    <% end %>
+
+    <div class="panel-container">
+        <h2>大阪</h2>
+        <div class="divider"></div>
+
+        <div class="panel">
+            <% @history.each do |t| %>
+                <%= t.history %>
+            <% end %>
+            <button class="like-button">いいね</button>
+        </div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+    </div>
+
+    <div class="panel-container">
+        <h2>兵庫</h2>
+        <div class="divider"></div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+
+        <div class="panel">
+            <button class="like-button">いいね</button>
+        </div>
+    </div>
+
+    <!-- 他の関西の県に対するパネルを追加 -->
+
+</body>
+</html>

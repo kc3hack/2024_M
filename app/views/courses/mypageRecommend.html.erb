@@ -6,8 +6,8 @@
     <%= stylesheet_link_tag 'mypageRecommend', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <!-- ログインボタン -->
-    <button class="signOutButton" onclick="location.href='./siteTop.html'">サインアウト</button>
+    <!-- ログアウトボタン -->
+    <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "signOutButton" %>
     <div class="textRecommendRoute">
         おすすめ経路
     </div>

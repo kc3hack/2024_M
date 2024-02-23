@@ -1,28 +1,30 @@
 <%= form_for @course do |f| %>
   <%= stylesheet_link_tag "new", :media => "all" %>
-  <div class="field">
-    <%= f.label :start ,style: "display: none;" %>
-    <%= f.text_field:start, placeholder:'出発地'%>
-    <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"]]), { include_blank: false } ,id: "transportation"%>
-    <br>
+  <div class="body">
+    <div class="field">
+      <%= f.label :start ,style: "display: none;" %>
+      <%= f.text_field:start, placeholder:'出発地'%>
+      <%= f.select :transportation, options_for_select([["徒歩", "walking"], ["自動車", "driving"]]), { include_blank: false } ,id: "transportation"%>
+      <br>
 
-    <!-- 経由地の入力欄 -->
-    <div id="waypoints_fields" >
-      <%= f.label :waypoint ,style: "display: none;" %>
-      <%= f.text_field :waypoints, placeholder: "経由地", style: "display: none;" %>
+      <!-- 経由地の入力欄 -->
+      <div id="waypoints_fields" >
+        <%= f.label :waypoint ,style: "display: none;" %>
+        <%= f.text_field :waypoints, placeholder: "経由地", style: "display: none;" %>
+      </div>
+
+      <!-- 隠しフィールド：transportation_origin -->
+      <%= f.hidden_field :transportation_origin, id: "transportation_origin_hidden" %>
+
+      <%= button_tag "➕", type: "button", id: "add_waypoint" %>
+      <br>
+
+      <%= f.label :destination, style: "display: none;" %>
+      <%= f.text_field :destination, placeholder:'目的地'%>
+      <br>
     </div>
-
-    <!-- 隠しフィールド：transportation_origin -->
-    <%= f.hidden_field :transportation_origin, id: "transportation_origin_hidden" %>
-
-    <%= button_tag "➕", type: "button", id: "add_waypoint" %>
-    <br>
-
-    <%= f.label :destination, style: "display: none;" %>
-    <%= f.text_field :destination, placeholder:'目的地'%>
-    <br>
-  </div>
   <%= f.submit "経路検索" ,id: "search_route"%>
+  </div>
 <% end %>
 
 <script>
