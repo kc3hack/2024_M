@@ -8,26 +8,17 @@
   <body>
     <div class="background">
       <div class="login">
-        <div style="background: #ffffff; border: #060606 double 6px; border-radius:15px; font-size: 100%; padding: 15px;">
+        <div style="background: #ffffff; border: #060606 double 6px; border-radius:15px; font-size: 100%;">
           <div class="login-screen">
             <div class="app-title">
               <h1>ログイン</h1>
+              <% if user_signed_in? %>
+            <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-nav" %>
+            <% else %>
+                <%= link_to "ログイン", new_user_session_path, class: "btn" %>
+                <%= link_to "新規作成", new_user_registration_path, class: "btnNew" %>
+            <% end %>
             </div>
-
-            <div class="login-form">
-              <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="username" id="login-name">
-                <label class="login-field-icon fui-user" for="login-name"></label>
-              </div>
-
-              <div class="control-group">
-                <input type="password" class="login-field" value="" placeholder="password" id="login-pass">
-                <label class="login-field-icon fui-lock" for="login-pass"></label>
-              </div>
-
-              <a class="btn btn-primary btn-large btn-block" href="http://localhost:3000/courses/mypageRecommend">ログイン</a>
-            
-              <a class="btnNew btn-primary btn-large btn-block" href="http://localhost:3000/courses/newAccount">新規作成</a>
             </div>
           </div>
         </div>
