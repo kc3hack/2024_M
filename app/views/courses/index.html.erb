@@ -15,8 +15,6 @@
 			<% end %>
 		</div>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
-		<div id="edit_area">asdfghj</div>
-        <% end %>
 	</body>
 </html>
 <script>
@@ -46,14 +44,6 @@
 			setTimeout(() => {
 			resolve('resolved');
 			}, 500);
-		});
-	}
-
-	function resolveAfter10Seconds() {
-		return new Promise((resolve) => {
-			setTimeout(() => {
-			resolve('resolved');
-			}, 5000);
 		});
 	}
 
@@ -97,7 +87,6 @@
 						center: markerLatLng,
 						zoom: 15
 					});
-					test();
 					t+=1
 				}else if(k!=routes.length){
 					setLocation(mar);
@@ -106,8 +95,8 @@
 			});
 			const result = await resolveAfter2Seconds();
 		}
-	}
 
+	}
 	function setLocation(ma){
     	// 所要時間取得
 		if(transportations[count]==="walking"){
@@ -182,11 +171,6 @@
 			var routeTime = document.getElementById("route-time");
 			routeTime.innerHTML = "およそ" + duration + "で着きます"
 		}
-	}
-
-	async function test(){
-		var res = await resolveAfter10Seconds();
-		document.getElementById('edit_area').textContent = history ;
 	}
 </script>
 
