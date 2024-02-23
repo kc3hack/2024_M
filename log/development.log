@@ -87420,6 +87420,7 @@ Completed 200 OK in 40ms (Views: 28.6ms | ActiveRecord: 0.9ms | Allocations: 215
 
 [dotenv] Set [36mGOOGLE_MAP_KEY[0m
 [dotenv] Loaded [33m.env[0m
+<<<<<<< HEAD
 [dotenv] Set [36mGOOGLE_MAP_KEY[0m
 [dotenv] Loaded [33m.env[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
@@ -88277,3 +88278,5 @@ app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting 
 app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
 app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
   [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+=======
+>>>>>>> origin
