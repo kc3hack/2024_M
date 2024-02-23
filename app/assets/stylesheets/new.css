@@ -1,6 +1,8 @@
-.field:before {
-    background-image: url("https://as1.ftcdn.net/v2/jpg/03/57/33/96/1000_F_357339685_kL4t7I5t1ZQv7vERZDqfL8tfP29dWmi6.jpg");
+.body:before {
+    background-image: url("https://cdn.discordapp.com/attachments/1034103208861253663/1210144937430089728/newhaikei.jpeg?ex=65e97e4c&is=65d7094c&hm=fbed3c7f789208648a9e5fc025bf7d0134872e6a5c33cf5f00df9da6059d21be&");
     background-size: cover;
+    background-attachment: fixed;
+    height: 400vh;
     content: "";
     position: absolute;
     top: -3px;
@@ -10,6 +12,7 @@
     filter: blur(3px);
     z-index: -1;
 }
+
 .field input[type="text"] {
     width: 50vw;
     height: 5vh;
@@ -39,6 +42,7 @@
 }
 
 #add_waypoint {
+  
   margin-top: 2vh;
   width: 3vw;
   height: 3vw;
@@ -50,6 +54,7 @@
 
 #search_route {
     padding: 8px 12px;
+    margin-top: 10vh;
     margin-left: 80vw;
-    background-color: #719ee1;
+    background-color: rgb(251, 252, 252);
 }

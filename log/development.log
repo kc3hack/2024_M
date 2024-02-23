@@ -87418,3 +87418,5 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 40ms (Views: 28.6ms | ActiveRecord: 0.9ms | Allocations: 21586)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
