@@ -53,77 +53,50 @@
             padding: 10px;
             margin-bottom: 20px;
         }
+
+        .total-time {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <% @history.each do |t| %>
-      <% data = t.history.split(',') %>
-      <div class="time-slot">
-        <h2><%= data[0] %> - <%= data[2] %></h2>
-        <div class="divider"></div>
+<% total_time = 0 %>  
 
-        <div class="panel">
-          <h3><%= data[0] %></h3>
-          <p>移動手段: <%= data[1] %></p>
-        </div>
-
-        <div class="panel">
-          <h3><%= data[3] %></h3>
-          <p>移動手段: <%= data[4] %></p>
-        </div>
-
-        <!-- 必要に応じて他の情報を表示 -->
-
-      </div>
-    <% end %>
-
+  <% @history.each_slice(3) do |slice| %>
     <div class="panel-container">
-        <h2>大阪</h2>
-        <div class="divider"></div>
+      <div class="divider"></div>
+      <% slice.each_with_index do |t, index| %>
+        <% data = t.history.split(',') %>
+        <div class="time-slot">
+          <h2><%= data.first %> - <%= data.last %></h2>
+          <div class="divider"></div>
 
-        <div class="panel">
-            <% @history.each do |t| %>
-                <%= t.history %>
-            <% end %>
-            <button class="like-button">いいね</button>
-        </div>
+          <% (0..10).each do |panel_index| %>
+            <% panel_data_index = panel_index * 3 %>
+            <% break if panel_data_index >= data.size %>
 
-        <div class="panel">
-            <button class="like-button">いいね</button>
-        </div>
+            <!-- 各パネルの表示 -->
+            <div class="panel">
+              <h3><%= data[panel_data_index] %></h3>
+              <p>移動手段: <%= data[panel_data_index + 1] %></p>
+              <p>移動時間: <%= data[panel_data_index + 2] %></p>
+            </div>
+          <% end %>
 
-        <div class="panel">
-            <button class="like-button">いいね</button>
-        </div>
+          <!-- 合計時間の表示 -->
+          <div class="total-time">
+            <h3>合計時間: <%= total_time %> 分</h3>
+          </div>
 
-        <div class="panel">
-            <button class="like-button">いいね</button>
+          <!-- 必要に応じて他の情報を表示 -->
+
         </div>
+        <% total_time += data[2].to_i %>
+      <% end %>
     </div>
-
-    <div class="panel-container">
-        <h2>兵庫</h2>
-        <div class="divider"></div>
-
-        <div class="panel">
-            <button class="like-button">いいね</button>
-        </div>
-
-        <div class="panel">
-            <button class="like-button">いいね</button>
-        </div>
-
-        <div class="panel">
-            <button class="like-button">いいね</button>
-        </div>
-
-        <div class="panel">
-            <button class="like-button">いいね</button>
-        </div>
-    </div>
-
-    <!-- 他の関西の県に対するパネルを追加 -->
+  <% end %>
 
 </body>
+
 </html>
