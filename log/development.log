@@ -87418,3 +87418,862 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 40ms (Views: 28.6ms | ActiveRecord: 0.9ms | Allocations: 21586)
 
 
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_MAP_KEY[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+Started GET "/courses/new" for ::1 at 2024-02-23 13:23:07 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 442.9ms | Allocations: 69832)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 447.6ms | Allocations: 71110)
+Completed 200 OK in 487ms (Views: 455.7ms | ActiveRecord: 0.8ms | Allocations: 83154)
+
+
+Started POST "/courses" for ::1 at 2024-02-23 13:23:33 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"driving,driving", "waypoints"=>"大阪,大阪難波", "transportation_origin"=>"driving", "destination"=>"明石"}, "waypoints"=>"大阪難波", "transportation_1.5"=>"driving", "transportation_2.5"=>"driving"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (2.4ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation", "transportation_origin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "明石"], ["created_at", "2024-02-23 04:23:33.926884"], ["updated_at", "2024-02-23 04:23:33.926884"], ["waypoints", "大阪,大阪難波"], ["transportation", "driving,driving"], ["transportation_origin", "driving"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 3.6ms | Allocations: 4328)
+
+
+Started GET "/" for ::1 at 2024-02-23 13:23:33 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  Rendered courses/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 4173)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4258)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 5053)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+	<head>
+		<title>Route Map</title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	</head>
+	<body>
+		<div><p id="route-time"></p></div>
+		<div>
+			<% @course.each do |t| %>
+				<div class="startdestination">
+					<%= t.start %>
+					<%= t.waypoints%>
+					<%= t.destination %>
+				</div>
+			<% end %>
+		</div>
+		<div id="map" style="width: 100vw; height: 80vh;"></div>
+		<div id="edit_area">asdfghj</div>
+        <% end %>
+	</body>
+</html>
+<script>
+	var directionsService;
+	var directionsRenderer;
+	var distanceMatrixservice;
+	var start = "<%= @courses[-1].start %>";
+	var destination = "<%= @courses[-1].destination %>";
+	var waypoint = "<%= @courses[-1].waypoints %>";
+	const transportation = "<%= @courses[-1].transportation_origin %>";
+	const tmp = "<%= @courses[-1].transportation %>";
+	var tmps = tmp.split(",");
+	const mar = [];
+	const routes = [];
+	const transportations = [];
+	let count = 0;
+	let his = 0;
+	let history = start;
+
+	transportations.push(transportation);
+	for(var i in tmps){
+		transportations.push(tmps[i])
+	}
+
+	function resolveAfter2Seconds() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+			resolve('resolved');
+			}, 500);
+		});
+	}
+
+	function resolveAfter10Seconds() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+			resolve('resolved');
+			}, 5000);
+		});
+	}
+
+	async function initMap() {
+
+		//マップを表示する要素を指定
+		var target = document.getElementById('map');
+		var geocoder = new google.maps.Geocoder();
+		var marker = [];
+		var waypoints = waypoint.split(",");
+		let t = 0;
+
+		routes.push(start);
+		if(waypoints[0]!=""){
+			for (var k in waypoints) {
+				routes.push(waypoints[k]);
+			}
+		}
+		routes.push(destination);
+
+		directionsService = new google.maps.DirectionsService();
+		directionsRenderer = new google.maps.DirectionsRenderer();
+		distanceMatrixservice = new google.maps.DistanceMatrixService();
+
+		for (var k in routes) {
+			geocoder.geocode({ address: routes[k] }, function(results, status){
+				if (status === 'OK' && results[0]){
+					mar.push({
+                        "name": routes[k],
+                        'lat': results[0].geometry.location.lat(),
+                        'lng': results[0].geometry.location.lng()
+                    });
+				}else{
+					//住所が存在しない場合の処理
+					alert('住所が正しくないか存在しません。');
+					target.style.display='none';
+				}
+				if(t==0){
+					var markerLatLng = new google.maps.LatLng({lat: mar[0]['lat'], lng: mar[0]['lng']});
+					map = new google.maps.Map(target, {
+						center: markerLatLng,
+						zoom: 15
+					});
+					test();
+					t+=1
+				}else if(k!=routes.length){
+					setLocation(mar);
+					count+=1;
+				}
+			});
+			const result = await resolveAfter2Seconds();
+		}
+	}
+
+	function setLocation(ma){
+    	// 所要時間取得
+		if(transportations[count]==="walking"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.WALKING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.WALKING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}else if(transportations[count]==="driving"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.DRIVING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}
+	}
+
+	async function timeRequired(response, status) {
+		if(status == "OK") {
+			var origins = response.originAddresses;
+			var destinations = response.destinationAddresses;
+			for (var i = 0; i < origins.length; i++) {
+				var results = response.rows[i].elements;
+				for (var j = 0; j < results.length; j++) {
+					var element = results[j];
+					var distance = element.distance.text;
+					var duration = element.duration.text;
+					var from = origins[i];
+					var to = destinations[j];
+				}
+			}
+			const result = await resolveAfter2Seconds();
+			if(his==0){
+				history += ",";
+				history += (transportations[his]);
+				history += ",";
+				history += (duration);
+				history += ",";
+				history += (routes[his+1]);
+				his+=1;
+			}else{
+				history += ",";
+				history += (transportations[his]);
+				history += ",";
+				history += (duration);
+				history += ",";
+				history += (routes[his+1]);
+				his+=1;
+			}
+			var routeTime = document.getElementById("route-time");
+			routeTime.innerHTML = "およそ" + duration + "で着きます"
+		}
+	}
+
+	async function test(){
+		var res = await resolveAfter10Seconds();
+		document.getElementById('edit_area').textContent = history ;
+	}
+</script>
+
+<script src="//maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap"></script>
+):
+1:    <html>
+2:    	<head>
+3:    		<title>Route Map</title>
+4:    		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+5:    	</head>
+6:    	<body>
+7:    		<div><p id="route-time"></p></div>
+8:    		<div>
+9:    			<% @course.each do |t| %>
+10:    				<div class="startdestination">
+11:    					<%= t.start %>
+12:    					<%= t.waypoints%>
+13:    					<%= t.destination %>
+14:    				</div>
+15:    			<% end %>
+16:    		</div>
+17:    		<div id="map" style="width: 100vw; height: 80vh;"></div>
+18:    		<div id="edit_area">asdfghj</div>
+19:            <% end %>
+20:    	</body>
+21:    </html>
+22:    <script>
+23:    	var directionsService;
+24:    	var directionsRenderer;
+25:    	var distanceMatrixservice;
+26:    	var start = "<%= @courses[-1].start %>";
+27:    	var destination = "<%= @courses[-1].destination %>";
+28:    	var waypoint = "<%= @courses[-1].waypoints %>";
+29:    	const transportation = "<%= @courses[-1].transportation_origin %>";
+30:    	const tmp = "<%= @courses[-1].transportation %>";
+31:    	var tmps = tmp.split(",");
+32:    	const mar = [];
+33:    	const routes = [];
+34:    	const transportations = [];
+35:    	let count = 0;
+36:    	let his = 0;
+37:    	let history = start;
+38:    
+39:    	transportations.push(transportation);
+40:    	for(var i in tmps){
+41:    		transportations.push(tmps[i])
+42:    	}
+43:    
+44:    	function resolveAfter2Seconds() {
+45:    		return new Promise((resolve) => {
+46:    			setTimeout(() => {
+47:    			resolve('resolved');
+48:    			}, 500);
+49:    		});
+50:    	}
+51:    
+52:    	function resolveAfter10Seconds() {
+53:    		return new Promise((resolve) => {
+54:    			setTimeout(() => {
+55:    			resolve('resolved');
+56:    			}, 5000);
+57:    		});
+58:    	}
+59:    
+60:    	async function initMap() {
+61:    
+62:    		//マップを表示する要素を指定
+63:    		var target = document.getElementById('map');
+64:    		var geocoder = new google.maps.Geocoder();
+65:    		var marker = [];
+66:    		var waypoints = waypoint.split(",");
+67:    		let t = 0;
+68:    
+69:    		routes.push(start);
+70:    		if(waypoints[0]!=""){
+71:    			for (var k in waypoints) {
+72:    				routes.push(waypoints[k]);
+73:    			}
+74:    		}
+75:    		routes.push(destination);
+76:    
+77:    		directionsService = new google.maps.DirectionsService();
+78:    		directionsRenderer = new google.maps.DirectionsRenderer();
+79:    		distanceMatrixservice = new google.maps.DistanceMatrixService();
+80:    
+81:    		for (var k in routes) {
+82:    			geocoder.geocode({ address: routes[k] }, function(results, status){
+83:    				if (status === 'OK' && results[0]){
+84:    					mar.push({
+85:                            "name": routes[k],
+86:                            'lat': results[0].geometry.location.lat(),
+87:                            'lng': results[0].geometry.location.lng()
+88:                        });
+89:    				}else{
+90:    					//住所が存在しない場合の処理
+91:    					alert('住所が正しくないか存在しません。');
+92:    					target.style.display='none';
+93:    				}
+94:    				if(t==0){
+95:    					var markerLatLng = new google.maps.LatLng({lat: mar[0]['lat'], lng: mar[0]['lng']});
+96:    					map = new google.maps.Map(target, {
+97:    						center: markerLatLng,
+98:    						zoom: 15
+99:    					});
+100:    					test();
+101:    					t+=1
+102:    				}else if(k!=routes.length){
+103:    					setLocation(mar);
+104:    					count+=1;
+105:    				}
+106:    			});
+107:    			const result = await resolveAfter2Seconds();
+108:    		}
+109:    	}
+110:    
+111:    	function setLocation(ma){
+112:        	// 所要時間取得
+113:    		if(transportations[count]==="walking"){
+114:    			distanceMatrixservice.getDistanceMatrix({
+115:    				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+116:    				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+117:    				travelMode: google.maps.TravelMode.WALKING, // 移動手段
+118:    			}, timeRequired)
+119:    			directionsService.route({
+120:    				origin: routes[count],
+121:    				destination: routes[count+1],
+122:    				travelMode: google.maps.TravelMode.WALKING
+123:    			}, function(response, status) {
+124:    				if (status === google.maps.DirectionsStatus.OK) {
+125:    					// ルート検索の結果を地図上に描画
+126:    					directionsRenderer.setMap(map);
+127:    					directionsRenderer.setDirections(response);
+128:    				}
+129:    			});
+130:    		}else if(transportations[count]==="driving"){
+131:    			distanceMatrixservice.getDistanceMatrix({
+132:    				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+133:    				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+134:    				travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+135:    			}, timeRequired)
+136:    			directionsService.route({
+137:    				origin: routes[count],
+138:    				destination: routes[count+1],
+139:    				travelMode: google.maps.TravelMode.DRIVING
+140:    			}, function(response, status) {
+141:    				if (status === google.maps.DirectionsStatus.OK) {
+142:    					// ルート検索の結果を地図上に描画
+143:    					directionsRenderer.setMap(map);
+144:    					directionsRenderer.setDirections(response);
+145:    				}
+146:    			});
+147:    		}
+148:    	}
+149:    
+150:    	async function timeRequired(response, status) {
+151:    		if(status == "OK") {
+152:    			var origins = response.originAddresses;
+153:    			var destinations = response.destinationAddresses;
+154:    			for (var i = 0; i < origins.length; i++) {
+155:    				var results = response.rows[i].elements;
+156:    				for (var j = 0; j < results.length; j++) {
+157:    					var element = results[j];
+158:    					var distance = element.distance.text;
+159:    					var duration = element.duration.text;
+160:    					var from = origins[i];
+161:    					var to = destinations[j];
+162:    				}
+163:    			}
+164:    			const result = await resolveAfter2Seconds();
+165:    			if(his==0){
+166:    				history += ",";
+167:    				history += (transportations[his]);
+168:    				history += ",";
+169:    				history += (duration);
+170:    				history += ",";
+171:    				history += (routes[his+1]);
+172:    				his+=1;
+173:    			}else{
+174:    				history += ",";
+175:    				history += (transportations[his]);
+176:    				history += ",";
+177:    				history += (duration);
+178:    				history += ",";
+179:    				history += (routes[his+1]);
+180:    				his+=1;
+181:    			}
+182:    			var routeTime = document.getElementById("route-time");
+183:    			routeTime.innerHTML = "およそ" + duration + "で着きます"
+184:    		}
+185:    	}
+186:    
+187:    	async function test(){
+188:    		var res = await resolveAfter10Seconds();
+189:    		document.getElementById('edit_area').textContent = history ;
+190:    	}
+191:    </script>
+192:    
+193:    <script src="//maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap"></script>
+  
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+Started GET "/courses/new" for ::1 at 2024-02-23 13:23:48 +0900
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2890)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 206)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3349)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 3931)
+
+
+Started POST "/courses" for ::1 at 2024-02-23 13:23:58 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"start"=>"奈良", "transportation"=>"driving", "waypoints"=>"大阪難波", "transportation_origin"=>"driving", "destination"=>"明石"}, "waypoints"=>"大阪難波", "transportation_1.5"=>"driving"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mCourse Create (0.9ms)[0m  [1m[32mINSERT INTO "courses" ("start", "destination", "created_at", "updated_at", "waypoints", "transportation", "transportation_origin") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["start", "奈良"], ["destination", "明石"], ["created_at", "2024-02-23 04:23:58.526774"], ["updated_at", "2024-02-23 04:23:58.526774"], ["waypoints", "大阪難波"], ["transportation", "driving"], ["transportation_origin", "driving"]]
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/courses_controller.rb:16:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.3ms | Allocations: 2821)
+
+
+Started GET "/" for ::1 at 2024-02-23 13:23:58 +0900
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 1572)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2070)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+	<head>
+		<title>Route Map</title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	</head>
+	<body>
+		<div><p id="route-time"></p></div>
+		<div>
+			<% @course.each do |t| %>
+				<div class="startdestination">
+					<%= t.start %>
+					<%= t.waypoints%>
+					<%= t.destination %>
+				</div>
+			<% end %>
+		</div>
+		<div id="map" style="width: 100vw; height: 80vh;"></div>
+		<div id="edit_area">asdfghj</div>
+        <% end %>
+	</body>
+</html>
+<script>
+	var directionsService;
+	var directionsRenderer;
+	var distanceMatrixservice;
+	var start = "<%= @courses[-1].start %>";
+	var destination = "<%= @courses[-1].destination %>";
+	var waypoint = "<%= @courses[-1].waypoints %>";
+	const transportation = "<%= @courses[-1].transportation_origin %>";
+	const tmp = "<%= @courses[-1].transportation %>";
+	var tmps = tmp.split(",");
+	const mar = [];
+	const routes = [];
+	const transportations = [];
+	let count = 0;
+	let his = 0;
+	let history = start;
+
+	transportations.push(transportation);
+	for(var i in tmps){
+		transportations.push(tmps[i])
+	}
+
+	function resolveAfter2Seconds() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+			resolve('resolved');
+			}, 500);
+		});
+	}
+
+	function resolveAfter10Seconds() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+			resolve('resolved');
+			}, 5000);
+		});
+	}
+
+	async function initMap() {
+
+		//マップを表示する要素を指定
+		var target = document.getElementById('map');
+		var geocoder = new google.maps.Geocoder();
+		var marker = [];
+		var waypoints = waypoint.split(",");
+		let t = 0;
+
+		routes.push(start);
+		if(waypoints[0]!=""){
+			for (var k in waypoints) {
+				routes.push(waypoints[k]);
+			}
+		}
+		routes.push(destination);
+
+		directionsService = new google.maps.DirectionsService();
+		directionsRenderer = new google.maps.DirectionsRenderer();
+		distanceMatrixservice = new google.maps.DistanceMatrixService();
+
+		for (var k in routes) {
+			geocoder.geocode({ address: routes[k] }, function(results, status){
+				if (status === 'OK' && results[0]){
+					mar.push({
+                        "name": routes[k],
+                        'lat': results[0].geometry.location.lat(),
+                        'lng': results[0].geometry.location.lng()
+                    });
+				}else{
+					//住所が存在しない場合の処理
+					alert('住所が正しくないか存在しません。');
+					target.style.display='none';
+				}
+				if(t==0){
+					var markerLatLng = new google.maps.LatLng({lat: mar[0]['lat'], lng: mar[0]['lng']});
+					map = new google.maps.Map(target, {
+						center: markerLatLng,
+						zoom: 15
+					});
+					test();
+					t+=1
+				}else if(k!=routes.length){
+					setLocation(mar);
+					count+=1;
+				}
+			});
+			const result = await resolveAfter2Seconds();
+		}
+	}
+
+	function setLocation(ma){
+    	// 所要時間取得
+		if(transportations[count]==="walking"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.WALKING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.WALKING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}else if(transportations[count]==="driving"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.DRIVING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}
+	}
+
+	async function timeRequired(response, status) {
+		if(status == "OK") {
+			var origins = response.originAddresses;
+			var destinations = response.destinationAddresses;
+			for (var i = 0; i < origins.length; i++) {
+				var results = response.rows[i].elements;
+				for (var j = 0; j < results.length; j++) {
+					var element = results[j];
+					var distance = element.distance.text;
+					var duration = element.duration.text;
+					var from = origins[i];
+					var to = destinations[j];
+				}
+			}
+			const result = await resolveAfter2Seconds();
+			if(his==0){
+				history += ",";
+				history += (transportations[his]);
+				history += ",";
+				history += (duration);
+				history += ",";
+				history += (routes[his+1]);
+				his+=1;
+			}else{
+				history += ",";
+				history += (transportations[his]);
+				history += ",";
+				history += (duration);
+				history += ",";
+				history += (routes[his+1]);
+				his+=1;
+			}
+			var routeTime = document.getElementById("route-time");
+			routeTime.innerHTML = "およそ" + duration + "で着きます"
+		}
+	}
+
+	async function test(){
+		var res = await resolveAfter10Seconds();
+		document.getElementById('edit_area').textContent = history ;
+	}
+</script>
+
+<script src="//maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap"></script>
+):
+1:    <html>
+2:    	<head>
+3:    		<title>Route Map</title>
+4:    		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+5:    	</head>
+6:    	<body>
+7:    		<div><p id="route-time"></p></div>
+8:    		<div>
+9:    			<% @course.each do |t| %>
+10:    				<div class="startdestination">
+11:    					<%= t.start %>
+12:    					<%= t.waypoints%>
+13:    					<%= t.destination %>
+14:    				</div>
+15:    			<% end %>
+16:    		</div>
+17:    		<div id="map" style="width: 100vw; height: 80vh;"></div>
+18:    		<div id="edit_area">asdfghj</div>
+19:            <% end %>
+20:    	</body>
+21:    </html>
+22:    <script>
+23:    	var directionsService;
+24:    	var directionsRenderer;
+25:    	var distanceMatrixservice;
+26:    	var start = "<%= @courses[-1].start %>";
+27:    	var destination = "<%= @courses[-1].destination %>";
+28:    	var waypoint = "<%= @courses[-1].waypoints %>";
+29:    	const transportation = "<%= @courses[-1].transportation_origin %>";
+30:    	const tmp = "<%= @courses[-1].transportation %>";
+31:    	var tmps = tmp.split(",");
+32:    	const mar = [];
+33:    	const routes = [];
+34:    	const transportations = [];
+35:    	let count = 0;
+36:    	let his = 0;
+37:    	let history = start;
+38:    
+39:    	transportations.push(transportation);
+40:    	for(var i in tmps){
+41:    		transportations.push(tmps[i])
+42:    	}
+43:    
+44:    	function resolveAfter2Seconds() {
+45:    		return new Promise((resolve) => {
+46:    			setTimeout(() => {
+47:    			resolve('resolved');
+48:    			}, 500);
+49:    		});
+50:    	}
+51:    
+52:    	function resolveAfter10Seconds() {
+53:    		return new Promise((resolve) => {
+54:    			setTimeout(() => {
+55:    			resolve('resolved');
+56:    			}, 5000);
+57:    		});
+58:    	}
+59:    
+60:    	async function initMap() {
+61:    
+62:    		//マップを表示する要素を指定
+63:    		var target = document.getElementById('map');
+64:    		var geocoder = new google.maps.Geocoder();
+65:    		var marker = [];
+66:    		var waypoints = waypoint.split(",");
+67:    		let t = 0;
+68:    
+69:    		routes.push(start);
+70:    		if(waypoints[0]!=""){
+71:    			for (var k in waypoints) {
+72:    				routes.push(waypoints[k]);
+73:    			}
+74:    		}
+75:    		routes.push(destination);
+76:    
+77:    		directionsService = new google.maps.DirectionsService();
+78:    		directionsRenderer = new google.maps.DirectionsRenderer();
+79:    		distanceMatrixservice = new google.maps.DistanceMatrixService();
+80:    
+81:    		for (var k in routes) {
+82:    			geocoder.geocode({ address: routes[k] }, function(results, status){
+83:    				if (status === 'OK' && results[0]){
+84:    					mar.push({
+85:                            "name": routes[k],
+86:                            'lat': results[0].geometry.location.lat(),
+87:                            'lng': results[0].geometry.location.lng()
+88:                        });
+89:    				}else{
+90:    					//住所が存在しない場合の処理
+91:    					alert('住所が正しくないか存在しません。');
+92:    					target.style.display='none';
+93:    				}
+94:    				if(t==0){
+95:    					var markerLatLng = new google.maps.LatLng({lat: mar[0]['lat'], lng: mar[0]['lng']});
+96:    					map = new google.maps.Map(target, {
+97:    						center: markerLatLng,
+98:    						zoom: 15
+99:    					});
+100:    					test();
+101:    					t+=1
+102:    				}else if(k!=routes.length){
+103:    					setLocation(mar);
+104:    					count+=1;
+105:    				}
+106:    			});
+107:    			const result = await resolveAfter2Seconds();
+108:    		}
+109:    	}
+110:    
+111:    	function setLocation(ma){
+112:        	// 所要時間取得
+113:    		if(transportations[count]==="walking"){
+114:    			distanceMatrixservice.getDistanceMatrix({
+115:    				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+116:    				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+117:    				travelMode: google.maps.TravelMode.WALKING, // 移動手段
+118:    			}, timeRequired)
+119:    			directionsService.route({
+120:    				origin: routes[count],
+121:    				destination: routes[count+1],
+122:    				travelMode: google.maps.TravelMode.WALKING
+123:    			}, function(response, status) {
+124:    				if (status === google.maps.DirectionsStatus.OK) {
+125:    					// ルート検索の結果を地図上に描画
+126:    					directionsRenderer.setMap(map);
+127:    					directionsRenderer.setDirections(response);
+128:    				}
+129:    			});
+130:    		}else if(transportations[count]==="driving"){
+131:    			distanceMatrixservice.getDistanceMatrix({
+132:    				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+133:    				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+134:    				travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+135:    			}, timeRequired)
+136:    			directionsService.route({
+137:    				origin: routes[count],
+138:    				destination: routes[count+1],
+139:    				travelMode: google.maps.TravelMode.DRIVING
+140:    			}, function(response, status) {
+141:    				if (status === google.maps.DirectionsStatus.OK) {
+142:    					// ルート検索の結果を地図上に描画
+143:    					directionsRenderer.setMap(map);
+144:    					directionsRenderer.setDirections(response);
+145:    				}
+146:    			});
+147:    		}
+148:    	}
+149:    
+150:    	async function timeRequired(response, status) {
+151:    		if(status == "OK") {
+152:    			var origins = response.originAddresses;
+153:    			var destinations = response.destinationAddresses;
+154:    			for (var i = 0; i < origins.length; i++) {
+155:    				var results = response.rows[i].elements;
+156:    				for (var j = 0; j < results.length; j++) {
+157:    					var element = results[j];
+158:    					var distance = element.distance.text;
+159:    					var duration = element.duration.text;
+160:    					var from = origins[i];
+161:    					var to = destinations[j];
+162:    				}
+163:    			}
+164:    			const result = await resolveAfter2Seconds();
+165:    			if(his==0){
+166:    				history += ",";
+167:    				history += (transportations[his]);
+168:    				history += ",";
+169:    				history += (duration);
+170:    				history += ",";
+171:    				history += (routes[his+1]);
+172:    				his+=1;
+173:    			}else{
+174:    				history += ",";
+175:    				history += (transportations[his]);
+176:    				history += ",";
+177:    				history += (duration);
+178:    				history += ",";
+179:    				history += (routes[his+1]);
+180:    				his+=1;
+181:    			}
+182:    			var routeTime = document.getElementById("route-time");
+183:    			routeTime.innerHTML = "およそ" + duration + "で着きます"
+184:    		}
+185:    	}
+186:    
+187:    	async function test(){
+188:    		var res = await resolveAfter10Seconds();
+189:    		document.getElementById('edit_area').textContent = history ;
+190:    	}
+191:    </script>
+192:    
+193:    <script src="//maps.google.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap"></script>
+  
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+app/views/courses/index.html.erb:195: syntax error, unexpected `end', expecting end-of-input
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
