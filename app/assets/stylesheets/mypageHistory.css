@@ -29,3 +29,13 @@
     margin-left: 85%;
     background-color: #fefdfd;
 }
+
+.siteTopButton {
+    z-index: 1;
+    position: fixed;
+    margin-top: 2vh;
+    width: 8vw;
+    height: 5vh;
+    margin-right: 80%;
+    background-color: #fefdfd;
+  }

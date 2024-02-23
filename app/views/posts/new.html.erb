@@ -52,6 +52,10 @@
 		transportations.push(tmps[i]);
 	}
 
+    if(countroute===routes.length){
+        bottom.value = '履歴を表示する';
+    }
+
 	function resolveAfter05Seconds() {
 		return new Promise((resolve) => {
 			setTimeout(() => {
@@ -93,7 +97,6 @@
         const result = await resolveAfter05Seconds();
         countroute+=1;
         if(countroute === routes.length){
-            console.log("a");
             bottom.value = '履歴を表示する';
         }
         setLocation(mar);

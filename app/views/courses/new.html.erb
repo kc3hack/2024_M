@@ -1,6 +1,8 @@
 <%= form_for @course do |f| %>
   <%= stylesheet_link_tag "new", :media => "all" %>
   <div class="body">
+    <!-- サイトトップボタン -->
+     <%= link_to "サイトトップ", courses_siteTop_path, class: "siteTopButton" %>
     <div class="field">
       <%= f.label :start ,style: "display: none;" %>
       <%= f.text_field:start, placeholder:'出発地'%>
