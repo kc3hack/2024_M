@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
+  def siteTop
+    @course = Post.all
+  end
+
 	def result
 	end
 
