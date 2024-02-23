@@ -1,53 +1,10 @@
-<head>
-    <meta charset="utf-8">
-    <title>ログイン画面</title>
-    <%= stylesheet_link_tag 'newAccount', media: 'all', 'data-turbolinks-track': 'reload' %>
-</head>
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<meta charset="utf-8">
+<title>ログイン画面</title>
+<%= stylesheet_link_tag 'newAccount', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<%# <%= render "devise/shared/links" %> 
 
-        <div class="box-name">
-          <%= f.label :name %><br />
-          <%= f.text_field :name,:placeholder => "username", autofocus: true, autocomplete: "name" %>
-        </div>
-
-      <div class="box-password">
-        <div class="a-row">
-          <div class="column-left">
-            <%= f.label :password, "パスワード" %>
-          </div>
-          <div class="column-right">
-            <%= link_to "パスワードを忘れた場合", new_user_password_path %>
-          </div>
-        </div>
-        <%= f.password_field :password, :placeholder => "password", autocomplete: "current-password" %>
-      </div>
-      <div class="box-login">
-        <%= f.submit "ログイン" %>
-        <div class="legal-text">
-          続行することで、Hogezonの
-          <%= link_to "利用規約", "#" %>
-          および
-          <%= link_to "プライバシー規約", "#" %>
-          に同意するものとみなされます。
-        </div>
-        <% if devise_mapping.rememberable? %>
-          <div class="remember">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember, "ログインしたままにする" %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-
-<%= render "devise/shared/links" %>
 <div class="background2">
       <div class="login">
         <div style="background: #ffffff; border: #060606 double 6px; border-radius:15px; font-size: 100%; padding: 15px;">
@@ -59,19 +16,24 @@
               <%= render "devise/shared/error_messages", resource: resource %>
                 <div class="login-form">
                   <div class="control-group">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>      
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Eメール" %>      
                   </div>
 
                   <div class="control-group">
-                    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "username"%>
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "アカウント名"%>
                   </div>
 
                   <div class="control-group">
-                    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password" %>
+                    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
+                  </div>
+
+
+                  <div class="control-group">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認" %>
                   </div>
 
                   <div class="box-login">
-                    <%= f.submit "Sign up" %>
+                    <%= f.submit "作成" %>
                   </div>
                 </div>
               <% end %>

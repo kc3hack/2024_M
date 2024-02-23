@@ -4,25 +4,19 @@
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	</head>
 	<body>
-		<div><p id="route-time"></p></div>
-		<div>
-			<% @course.each do |t| %>
-				<div class="startdestination">
-					<%= t.start %>
-					<%= t.waypoints%>
-					<%= t.destination %>
-				</div>
-			<% end %>
-		</div>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
         <input id="button_next" type="button" value="次の経路を表示" onclick="nextRoutes()">
-		<div id="edit_area">ここに調べた結果が出てきます。</div>
-        <%= form_for @history do |f| %>
-                <%= f.label :history %>
-                <%= f.text_field :history, :size => 140 %>
-                <br>
-            <%= f.submit "履歴に保存する（投稿）" %>
-        <% end %>
+        <div><p id="route-time"></p></div>
+		<div id="edit_area">ここに調べた経路と時間がまとめて出てきます。</div>
+        <div id="result">
+            <div>上の結果を貼り付けて経路を投稿しよう！！</div>
+            <%= form_for @history do |f| %>
+                    <%= f.label :history %>
+                    <%= f.text_field :history, :size => 140 %>
+                    <br>
+                <%= f.submit "履歴に保存する（投稿）" %>
+            <% end %>
+        </div>
 	</body>
 </html>
 <script>
@@ -57,6 +51,10 @@
 	for(var i in tmps){
 		transportations.push(tmps[i]);
 	}
+
+    if(countroute===routes.length){
+        bottom.value = '履歴を表示する';
+    }
 
 	function resolveAfter05Seconds() {
 		return new Promise((resolve) => {
@@ -99,7 +97,6 @@
         const result = await resolveAfter05Seconds();
         countroute+=1;
         if(countroute === routes.length){
-            console.log("a");
             bottom.value = '履歴を表示する';
         }
         setLocation(mar);
@@ -223,7 +220,7 @@
 				his+=1;
 			}
 			var routeTime = document.getElementById("route-time");
-			routeTime.innerHTML = "およそ" + duration + "で着きます"
+			routeTime.innerHTML = routes[count-1] + "から" + routes[count] + "までにかかる時間はおよそ" + duration + "です"
 		}
 	}
 
