@@ -14,11 +14,6 @@ class PostsController < ApplicationController
         @post.userid = current_user.id
         @post.save
         redirect_to :action => "index"
-        # if post.save
-        #     redirect_to :action => "index"
-        # else
-        #     redirect_to :action => "new"
-        # end
     end
 
     private
