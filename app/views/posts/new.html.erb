@@ -15,6 +15,7 @@
 			<% end %>
 		</div>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
+        <input id="button_next" type="button" value="次の経路を表示" onclick="nextRoutes()">
 		<div id="edit_area">asdfghj</div>
         <%= form_for @history do |f| %>
             <div class="field">
@@ -33,6 +34,7 @@
 	var start = "<%= @courses[-1].start %>";
 	var destination = "<%= @courses[-1].destination %>";
 	var waypoint = "<%= @courses[-1].waypoints %>";
+    var waypoints = waypoint.split(",");
 	const transportation = "<%= @courses[-1].transportation_origin %>";
 	const tmp = "<%= @courses[-1].transportation %>";
 	var tmps = tmp.split(",");
@@ -43,9 +45,17 @@
 	let his = 0;
 	let history = start;
 
+    routes.push(start);
+    if(waypoints[0]!=""){
+        for (var k in waypoints) {
+            routes.push(waypoints[k]);
+        }
+    }
+    routes.push(destination);
+
 	transportations.push(transportation);
 	for(var i in tmps){
-		transportations.push(tmps[i])
+		transportations.push(tmps[i]);
 	}
 
 	function resolveAfter2Seconds() {
@@ -70,16 +80,7 @@
 		var target = document.getElementById('map');
 		var geocoder = new google.maps.Geocoder();
 		var marker = [];
-		var waypoints = waypoint.split(",");
 		let t = 0;
-
-		routes.push(start);
-		if(waypoints[0]!=""){
-			for (var k in waypoints) {
-				routes.push(waypoints[k]);
-			}
-		}
-		routes.push(destination);
 
 		directionsService = new google.maps.DirectionsService();
 		directionsRenderer = new google.maps.DirectionsRenderer();
