@@ -46,7 +46,7 @@
       var selectName = 'transportation_' + (waypointsFields.children.length / 2); // 子要素の数に基づいて名前を調整
       newSelect.name = selectName;
 
-      var options = [["徒歩", "walking"], ["自動車", "driving"], ["電車", "train"]];
+      var options = [["徒歩", "walking"], ["自動車", "driving"]];
       options.forEach(function(option) {
         var optionElement = document.createElement('option');
         optionElement.value = option[1];

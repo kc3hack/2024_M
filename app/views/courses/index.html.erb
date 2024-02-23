@@ -15,9 +15,8 @@
 			<% end %>
 		</div>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
-		<%# <%= form_for @course do |f|%>
-
-		<%# <%= f.submit "経路検索" ,id: "search_route" %>
+		<div id="edit_area">asdfghj</div>
+        <% end %>
 	</body>
 </html>
 <script>
@@ -34,9 +33,9 @@
 	const routes = [];
 	const transportations = [];
 	let count = 0;
-	const history = "";
+	let his = 0;
+	let history = start;
 
-	console.log(transportation + "b");
 	transportations.push(transportation);
 	for(var i in tmps){
 		transportations.push(tmps[i])
@@ -47,6 +46,14 @@
 			setTimeout(() => {
 			resolve('resolved');
 			}, 500);
+		});
+	}
+
+	function resolveAfter10Seconds() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+			resolve('resolved');
+			}, 5000);
 		});
 	}
 
@@ -90,6 +97,7 @@
 						center: markerLatLng,
 						zoom: 15
 					});
+					test();
 					t+=1
 				}else if(k!=routes.length){
 					setLocation(mar);
@@ -98,38 +106,51 @@
 			});
 			const result = await resolveAfter2Seconds();
 		}
-
 	}
+
 	function setLocation(ma){
-		console.log(ma);
-		console.log(transportations);
     	// 所要時間取得
-		if(transportations[count]==="")
-		distanceMatrixservice.getDistanceMatrix({
-			origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
-			destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
-			travelMode: google.maps.TravelMode.DRIVING, // 移動手段
-		}, timeRequired)
-		directionsService.route({
-			origin: routes[count],
-			destination: routes[count+1],
-			travelMode: google.maps.TravelMode.DRIVING
-		}, function(response, status) {
-			if (status === google.maps.DirectionsStatus.OK) {
-				// ルート検索の結果を地図上に描画
-				console.log("a");
-				directionsRenderer.setMap(map);
-				directionsRenderer.setDirections(response);
-			}
-		});
+		if(transportations[count]==="walking"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.WALKING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.WALKING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}else if(transportations[count]==="driving"){
+			distanceMatrixservice.getDistanceMatrix({
+				origins: [ma[count]["lat"] +"," + ma[count]["lng"]], // 出発地
+				destinations: [ma[count+1]["lat"] +"," + ma[count+1]["lng"]], // 目的地
+				travelMode: google.maps.TravelMode.DRIVING, // 移動手段
+			}, timeRequired)
+			directionsService.route({
+				origin: routes[count],
+				destination: routes[count+1],
+				travelMode: google.maps.TravelMode.DRIVING
+			}, function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					// ルート検索の結果を地図上に描画
+					directionsRenderer.setMap(map);
+					directionsRenderer.setDirections(response);
+				}
+			});
+		}
 	}
 
-	function timeRequired(response, status) {
+	async function timeRequired(response, status) {
 		if(status == "OK") {
 			var origins = response.originAddresses;
 			var destinations = response.destinationAddresses;
-			console.log(origins);
-			console.log(destinations);
 			for (var i = 0; i < origins.length; i++) {
 				var results = response.rows[i].elements;
 				for (var j = 0; j < results.length; j++) {
@@ -140,10 +161,32 @@
 					var to = destinations[j];
 				}
 			}
-			
+			const result = await resolveAfter2Seconds();
+			if(his==0){
+				history += ",";
+				history += (transportations[his]);
+				history += ",";
+				history += (duration);
+				history += ",";
+				history += (routes[his+1]);
+				his+=1;
+			}else{
+				history += ",";
+				history += (transportations[his]);
+				history += ",";
+				history += (duration);
+				history += ",";
+				history += (routes[his+1]);
+				his+=1;
+			}
 			var routeTime = document.getElementById("route-time");
 			routeTime.innerHTML = "およそ" + duration + "で着きます"
 		}
+	}
+
+	async function test(){
+		var res = await resolveAfter10Seconds();
+		document.getElementById('edit_area').textContent = history ;
 	}
 </script>
 

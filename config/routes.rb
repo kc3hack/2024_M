@@ -18,5 +18,11 @@ Rails.application.routes.draw do
 
   get 'courses/new' => 'courses#new'
 
+  get 'posts/index' => 'posts#index'
+
+  get 'posts/new' => 'posts#new'
+
   resources :courses
+
+  resources :posts
 end
