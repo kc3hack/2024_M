@@ -8,15 +8,17 @@
         <input id="button_next" type="button" value="次の経路を表示" onclick="nextRoutes()">
         <div><p id="route-time"></p></div>
 		<div id="edit_area">ここに調べた経路と時間がまとめて出てきます。</div>
-        <div id="result">
-            <div>上の結果を貼り付けて経路を投稿しよう！！</div>
-            <%= form_for @history do |f| %>
-                    <%= f.label :history %>
-                    <%= f.text_field :history, :size => 140 %>
-                    <br>
-                <%= f.submit "履歴に保存する（投稿）" %>
-            <% end %>
-        </div>
+        <% if user_signed_in? %>
+            <div id="result">
+                <div>上の結果を貼り付けて経路を投稿しよう！！</div>
+                <%= form_for @history do |f| %>
+                        <%= f.label :history %>
+                        <%= f.text_field :history, :size => 140 %>
+                        <br>
+                    <%= f.submit "履歴に保存する（投稿）" %>
+                <% end %>
+            </div>
+        <% end %>
 	</body>
 </html>
 <script>
@@ -53,7 +55,7 @@
 	}
 
     if(countroute===routes.length){
-        bottom.value = '履歴を表示する';
+        bottom.value = '結果をまとめて表示する';
     }
 
 	function resolveAfter05Seconds() {
@@ -130,7 +132,7 @@
                 zoom: 15
             });
         });
-        const result = await resolveAfter05Seconds();
+        var result = await resolveAfter05Seconds();
         geocoder.geocode({ address: routes[1] }, function(results, status){
             if (status === 'OK' && results[0]){
                 mar.push({
@@ -225,6 +227,7 @@
 	}
 
 	async function historyDisplay(){
+        var result = await resolveAfter05Seconds();
 		document.getElementById('edit_area').textContent = history ;
 	}
 </script>
