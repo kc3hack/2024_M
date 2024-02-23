@@ -10,8 +10,7 @@ class UsersController < ApplicationController
     end
 
     def show
-      # @history = Post.find(params[:id])
-      @history = Post.all
+      @history = Post.where(userid: current_user.id)
     end
 
     private

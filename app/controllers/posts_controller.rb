@@ -10,16 +10,19 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.new(post_params)
-        if post.save
-            redirect_to :action => "index"
-        else
-            redirect_to :action => "new"
-        end
+        @post = Post.new(post_params)
+        @post.userid = current_user.id
+        @post.save
+        redirect_to :action => "index"
+        # if post.save
+        #     redirect_to :action => "index"
+        # else
+        #     redirect_to :action => "new"
+        # end
     end
 
     private
     def post_params
-        params.require(:post).permit(:history).merge(user_id: current_user.id)
+        params.require(:post).permit(:history)
     end
 end
