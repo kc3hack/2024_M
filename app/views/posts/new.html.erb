@@ -54,7 +54,7 @@
 	}
 
     if(countroute===routes.length){
-        bottom.value = '履歴を表示する';
+        bottom.value = '結果をまとめて表示する';
     }
 
 	function resolveAfter05Seconds() {
@@ -131,7 +131,7 @@
                 zoom: 15
             });
         });
-        const result = await resolveAfter05Seconds();
+        var result = await resolveAfter05Seconds();
         geocoder.geocode({ address: routes[1] }, function(results, status){
             if (status === 'OK' && results[0]){
                 mar.push({
@@ -226,6 +226,7 @@
 	}
 
 	async function historyDisplay(){
+        var result = await resolveAfter05Seconds();
 		document.getElementById('edit_area').textContent = history ;
 	}
 </script>
