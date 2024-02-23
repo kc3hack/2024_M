@@ -4,36 +4,28 @@
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	</head>
 	<body>
-		<div><p id="route-time"></p></div>
-		<div>
-			<% @course.each do |t| %>
-				<div class="startdestination">
-					<%= t.start %>
-					<%= t.waypoints%>
-					<%= t.destination %>
-				</div>
-			<% end %>
-		</div>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
         <input id="button_next" type="button" value="次の経路を表示" onclick="nextRoutes()">
-		<div id="edit_area">asdfghj</div>
-        <%= form_for @history do |f| %>
-            <div class="field">
-                <%= f.label :history %>
-                <%= f.text_field :history, :size => 140 %>
-                <br>
-            </div>
-            <%= f.submit "履歴に保存する（投稿）" %>
-        <% end %>
+        <div><p id="route-time"></p></div>
+		<div id="edit_area">ここに調べた経路と時間がまとめて出てきます。</div>
+        <div id="result">
+            <div>上の結果を貼り付けて経路を投稿しよう！！</div>
+            <%= form_for @history do |f| %>
+                    <%= f.label :history %>
+                    <%= f.text_field :history, :size => 140 %>
+                    <br>
+                <%= f.submit "履歴に保存する（投稿）" %>
+            <% end %>
+        </div>
 	</body>
 </html>
 <script>
 	var directionsService;
 	var directionsRenderer;
 	var distanceMatrixservice;
-	var start = "<%= @courses[-1].start %>";
-	var destination = "<%= @courses[-1].destination %>";
-	var waypoint = "<%= @courses[-1].waypoints %>";
+	const start = "<%= @courses[-1].start %>";
+	const destination = "<%= @courses[-1].destination %>";
+	const waypoint = "<%= @courses[-1].waypoints %>";
     var waypoints = waypoint.split(",");
 	const transportation = "<%= @courses[-1].transportation_origin %>";
 	const tmp = "<%= @courses[-1].transportation %>";
@@ -44,6 +36,8 @@
 	let count = 0;
 	let his = 0;
 	let history = start;
+    let countroute = 2;
+    const bottom = document.getElementById('button_next');
 
     routes.push(start);
     if(waypoints[0]!=""){
@@ -58,7 +52,7 @@
 		transportations.push(tmps[i]);
 	}
 
-	function resolveAfter2Seconds() {
+	function resolveAfter05Seconds() {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 			resolve('resolved');
@@ -66,54 +60,88 @@
 		});
 	}
 
-	function resolveAfter10Seconds() {
-		return new Promise((resolve) => {
-			setTimeout(() => {
-			resolve('resolved');
-			}, 5000);
-		});
-	}
+    function nextRoutes(){
+        if(countroute===routes.length){
+            historyDisplay();
+        }else{
+            searchRoutes();
+        }
+    }
+
+    async function searchRoutes(){
+		//マップを表示する要素を指定
+		var target = document.getElementById('map');
+		var geocoder = new google.maps.Geocoder();
+
+		directionsService = new google.maps.DirectionsService();
+		directionsRenderer = new google.maps.DirectionsRenderer();
+		distanceMatrixservice = new google.maps.DistanceMatrixService();
+
+        geocoder.geocode({ address: routes[countroute] }, function(results, status){
+            if (status === 'OK' && results[0]){
+                mar.push({
+                    "name": routes[countroute],
+                    'lat': results[0].geometry.location.lat(),
+                    'lng': results[0].geometry.location.lng()
+                });
+            }else{
+                //住所が存在しない場合の処理
+                alert('住所が正しくないか存在しません。');
+                target.style.display='none';
+            }
+        });
+        const result = await resolveAfter05Seconds();
+        countroute+=1;
+        if(countroute === routes.length){
+            console.log("a");
+            bottom.value = '履歴を表示する';
+        }
+        setLocation(mar);
+    }
 
 	async function initMap() {
 
 		//マップを表示する要素を指定
 		var target = document.getElementById('map');
 		var geocoder = new google.maps.Geocoder();
-		var marker = [];
-		let t = 0;
 
 		directionsService = new google.maps.DirectionsService();
 		directionsRenderer = new google.maps.DirectionsRenderer();
 		distanceMatrixservice = new google.maps.DistanceMatrixService();
 
-		for (var k in routes) {
-			geocoder.geocode({ address: routes[k] }, function(results, status){
-				if (status === 'OK' && results[0]){
-					mar.push({
-                        "name": routes[k],
-                        'lat': results[0].geometry.location.lat(),
-                        'lng': results[0].geometry.location.lng()
-                    });
-				}else{
-					//住所が存在しない場合の処理
-					alert('住所が正しくないか存在しません。');
-					target.style.display='none';
-				}
-				if(t==0){
-					var markerLatLng = new google.maps.LatLng({lat: mar[0]['lat'], lng: mar[0]['lng']});
-					map = new google.maps.Map(target, {
-						center: markerLatLng,
-						zoom: 15
-					});
-					test();
-					t+=1
-				}else if(k!=routes.length){
-					setLocation(mar);
-					count+=1;
-				}
-			});
-			const result = await resolveAfter2Seconds();
-		}
+        geocoder.geocode({ address: routes[0] }, function(results, status){
+            if (status === 'OK' && results[0]){
+                mar.push({
+                    "name": routes[0],
+                    'lat': results[0].geometry.location.lat(),
+                    'lng': results[0].geometry.location.lng()
+                });
+            }else{
+                //住所が存在しない場合の処理
+                alert('住所が正しくないか存在しません。');
+                target.style.display='none';
+            }
+            var markerLatLng = new google.maps.LatLng({lat: mar[0]['lat'], lng: mar[0]['lng']});
+            map = new google.maps.Map(target, {
+                center: markerLatLng,
+                zoom: 15
+            });
+        });
+        const result = await resolveAfter05Seconds();
+        geocoder.geocode({ address: routes[1] }, function(results, status){
+            if (status === 'OK' && results[0]){
+                mar.push({
+                    "name": routes[1],
+                    'lat': results[0].geometry.location.lat(),
+                    'lng': results[0].geometry.location.lng()
+                });
+            }else{
+                //住所が存在しない場合の処理
+                alert('住所が正しくないか存在しません。');
+                target.style.display='none';
+            }
+            setLocation(mar);
+        });
 	}
 
 	function setLocation(ma){
@@ -153,6 +181,7 @@
 				}
 			});
 		}
+        count+=1;
 	}
 
 	async function timeRequired(response, status) {
@@ -169,7 +198,7 @@
 					var to = destinations[j];
 				}
 			}
-			const result = await resolveAfter2Seconds();
+			const result = await resolveAfter05Seconds();
 			if(his==0){
 				history += ",";
 				history += (transportations[his]);
@@ -188,12 +217,11 @@
 				his+=1;
 			}
 			var routeTime = document.getElementById("route-time");
-			routeTime.innerHTML = "およそ" + duration + "で着きます"
+			routeTime.innerHTML = routes[count-1] + "から" + routes[count] + "までにかかる時間はおよそ" + duration + "です"
 		}
 	}
 
-	async function test(){
-		var res = await resolveAfter10Seconds();
+	async function historyDisplay(){
 		document.getElementById('edit_area').textContent = history ;
 	}
 </script>

@@ -1,3 +1,8 @@
+<head>
+    <meta charset="utf-8">
+    <title>ログイン画面</title>
+    <%= stylesheet_link_tag 'newAccount', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -32,3 +37,34 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<div class="background2">
+      <div class="login">
+        <div style="background: #ffffff; border: #060606 double 6px; border-radius:15px; font-size: 100%; padding: 15px;">
+          <div class="login-screen">
+            <div class="app-title">
+              <h1>新規作成</h1>
+            </div>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="login-form">
+                  <div class="control-group">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>      
+                  </div>
+
+                  <div class="control-group">
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "username"%>
+                  </div>
+
+                  <div class="control-group">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password" %>
+                  </div>
+
+                  <div class="box-login">
+                    <%= f.submit "Sign up" %>
+                  </div>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
