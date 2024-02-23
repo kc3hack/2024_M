@@ -1,26 +1,32 @@
-<h2>Log in</h2>
+<%= stylesheet_link_tag 'newAccount', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+<%# <%= render "devise/shared/links" %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+<div class="background2">
+  <div class="login">
+    <div style="background: #ffffff; border: #060606 double 6px; border-radius:15px; font-size: 100%; padding: 15px;">
+      <div class="login-screen">
+        <div class="app-title">
+          <h1>ログイン</h1>
+          </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="login-form">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+              <div class="control-group">
+                <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "アカウント名"%>
+              </div>
+
+              <div class="control-group">
+                <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
+              </div>
+
+              <div class="box-login">
+              <%= f.submit "ログイン" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
