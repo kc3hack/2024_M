@@ -8,8 +8,12 @@
   <body>
     <!-- サイトトップボタン -->
     <button class="siteTopButton" onclick="location.href='/courses/siteTop.html'">サイトトップ</button>
-    <!-- ログインボタン -->
-    <button class="signOutButton" onclick="location.href='./siteTop.html'">サインアウト</button>
+    <% if user_signed_in? %>
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "signOutButton" %>
+    <% else %>
+
+    <% end %>
+
     <div class="textRecommendRoute">
         履歴
     </div>
