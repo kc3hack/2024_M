@@ -8,8 +8,12 @@
   </head>
   <body>
   <div>
-    <!-- ログインボタン -->
-    <button class="loginButton" onclick="location.href='/courses/login.html'">ログイン</button>
+    <% if user_signed_in? %>
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "loginButton" %>
+    <% else %>
+      <!-- ログインボタン -->
+      <button class="loginButton" onclick="location.href='/courses/login.html'">ログイン</button>
+    <% end %>
     <!-- スライドの外枠 -->
     <div class="slide-wrapper">
       <!-- スライド（コンテンツ） -->
