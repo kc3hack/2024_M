@@ -4,13 +4,13 @@
     <head>
         <meta charset="utf-8">
         <title>サイトトップ</title>
-        <%= stylesheet_link_tag 'mypageHistory', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload' %>
     </head>
     <body>
         <!-- サイトトップボタン -->
         <button class="siteTopButton" onclick="location.href='/courses/siteTop'">サイトトップ</button>
-        <!-- ログインボタン -->
-        <button class="signOutButton" onclick="location.href='/courses/siteTop'">サインアウト</button>
+        <!-- ログアウトボタン -->
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "signOutButton" %>
         <div class="textRecommendRoute">
             <% @history.each do |f| %>
                 <%= f.history %>
@@ -29,4 +29,49 @@
   <h1>ユーザーページ</h1>
 <% end %>
 
-<h1><%= @user.name %></h1>
+<!-- ログ -->
+<%= @user.name %>:
+<%= @user.id %>
+<hr>
+<div class="display-area">
+  <% @history.each_slice(3) do |slice| %>
+
+      <% slice.each_with_index do |t, index| %>
+        <div class="history">
+          <% data = t.history.split(',') %>
+
+          <div class="item departure"> <h2><%= data[0] %></h2> </div>
+          <div class="item transportation"> <%= data[1] %> </div>
+          <div class="item time"> <%= data[2] %> </div>
+          <div class="item arrow"></div>
+          <div class="item destination"> <h2> <%= data[3] %> </h2> </div>
+          
+        </div>
+      <% end %>
+
+  <% end %>
+</div>
+<%
+=begin%>
+ 履歴: <%= index %> => <%= data %> 
+<%
+=end%>
+
+<hr>
+<!-- テスト -->
+<!--コンテナ-->
+<div class="container"> 
+  <!--アイテム-->
+  <div class="history">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+  </div>
+</div>
+

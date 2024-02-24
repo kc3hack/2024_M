@@ -1,0 +1,123 @@
+.signOutButton {
+  z-index: 1;
+  position: fixed;
+  margin-top: 2vh;
+  width: 8vw;
+  height: 5vh;
+  margin-left: 90%;
+  background-color: #fefdfd;
+}
+.textRecommendRoute {
+  margin-top: 3vh;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.divcenter {
+  text-align: center;
+}
+.recommendRoute2 {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 40px;
+  height: 55vh;
+  width: 70vw;
+  border: 2px solid #000;
+}
+.searchButton {
+  margin-top: 5vh;
+  width: 8vw;
+  height: 5vh;
+  margin-left: 85%;
+  background-color: #fefdfd;
+}
+
+.siteTopButton {
+  z-index: 1;
+  position: fixed;
+  margin-top: 2vh;
+  width: 8vw;
+  height: 5vh;
+  margin-right: 80%;
+  background-color: #fefdfd;
+}
+
+.display-area {
+  margin: 5vh;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  /* background-color: rgba(176, 176, 176, 0.507); */
+}
+
+/* .container {
+  margin: 0, 100vh;
+  display: grid; 
+  height: 200px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+} */
+
+.history {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "areaA areaA areaA"
+    "areaB areaC areaD"
+    "areaE areaE areaE";
+
+    /* デザイン */
+    background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),linear-gradient(90deg,  transparent 19px, #ccc 20px);
+	background-size: 20px 20px;
+    border:dashed 2px #b3ada4;/*線の種類・太さ・色*/
+}
+
+.item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  /* background-color: blanchedalmond; */
+}
+
+.departure {
+  grid-area: areaA;
+}
+.transportation {
+  grid-area: areaB;
+  position: absolute;
+  top: 3.7vh;
+  left: 13vh;
+}
+.arrow {
+  grid-area: areaC;
+  transform: rotate(90deg);
+
+  
+  width: 18vh;
+  height: 4vh;
+  background-color: #000000;
+  clip-path: polygon(
+    0 43%,
+    90% 41%,
+    85% 3%,
+    100% 50%,
+    83% 100%,
+    90% 58%,
+    0 57%
+  );
+  justify-self: left;
+  align-self: center;
+}
+.time {
+  grid-area: areaD;
+
+
+}
+
+.destination {
+  grid-area: areaE;
+}
