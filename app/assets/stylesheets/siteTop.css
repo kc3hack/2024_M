@@ -21,6 +21,17 @@ li {
   margin-left: 90%;
   background-color: #fefdfd;
 }
+.mypageButton {
+  z-index: 1;
+  position: fixed;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  width: 8vw;
+  height: 5vh;
+  margin-right: 90%;
+  background-color: #fefdfd;
+}
+
 /*  ↓ スライド（コンテンツ） */
 .slide { /*スライド全体 */
   z-index: 0;

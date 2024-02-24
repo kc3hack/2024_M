@@ -1,0 +1,182 @@
+.signOutButton {
+  z-index: 1;
+  position: fixed;
+  margin-top: 2vh;
+  width: 8vw;
+  height: 5vh;
+  margin-left: 90%;
+  background-color: #fefdfd;
+}
+.textRecommendRoute {
+  margin-top: 3vh;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.divcenter {
+  text-align: center;
+}
+.recommendRoute2 {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 40px;
+  padding: 5vw;
+  height: auto;
+  width: auto;
+  border: 2px solid #000;
+}
+.searchButton {
+  margin-top: 5vh;
+  width: 8vw;
+  height: 5vh;
+  margin-left: 85%;
+  background-color: #fefdfd;
+}
+
+.siteTopButton {
+  z-index: 1;
+  position: fixed;
+  margin-top: 2vh;
+  width: 8vw;
+  height: 5vh;
+  margin-right: 80%;
+  background-color: #fefdfd;
+}
+
+.postButton {
+  z-index: 1;
+  position: fixed;
+  margin-top: 2vh;
+  width: 8vw;
+  height: 5vh;
+  margin-left: 80%;
+  background-color: #fefdfd;
+}
+
+/* 4のとき */
+.container4 {
+  margin: 0, 100vh;
+  display: grid;
+  height: 200px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "departure arrow1 destination"
+    "none transportation1 time1";
+  gap: 10px;
+
+  /* デザイン */
+  background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),
+    linear-gradient(90deg, transparent 19px, #ccc 20px);
+  background-size: 20px 20px;
+  border: dashed 2px #b3ada4; /*線の種類・太さ・色*/
+}
+
+/* 7のとき */
+
+.container7 {
+  margin: 0, 100vh;
+  display: grid;
+  height: 200px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "departure arrow1 waypoint1 arrow2 destination"
+    "none transportation1 time1 transportation2 time2";
+  gap: 10px;
+
+  /* デザイン */
+  background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),
+    linear-gradient(90deg, transparent 19px, #ccc 20px);
+  background-size: 20px 20px;
+  border: dashed 2px #b3ada4; /*線の種類・太さ・色*/
+}
+
+/* 10のとき */
+
+.container10 {
+  margin: 0, 100vh;
+  display: grid;
+  height: 200px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "departure arrow1          waypoint1 arrow2          waypoint2 arrow3          destination"
+    "none      transportation1 time1     transportation2 time2     transportation3 time3";
+  gap: 10px;
+
+  /* デザイン */
+  background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),
+    linear-gradient(90deg, transparent 19px, #ccc 20px);
+  background-size: 20px 20px;
+  border: dashed 2px #b3ada4; /*線の種類・太さ・色*/
+}
+
+.item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 120%;
+  /* background-color: blanchedalmond; */
+}
+
+.none {
+  grid-area: none;
+}
+.departure {
+  grid-area: departure;
+  font-size: 30px;
+}
+.transportation1 {
+  grid-area: transportation1;
+  font-size: 20px;
+}
+
+.transportation2 {
+  grid-area: transportation2;
+  font-size: 20px;
+}
+
+.transportation3 {
+  grid-area: transportation3;
+  font-size: 20px;
+}
+
+.waypoint1 {
+  grid-area: waypoint1;
+}
+
+.waypoint2 {
+  grid-area: waypoint2;
+}
+
+.time1 {
+  grid-area: time1;
+}
+
+.time2 {
+  grid-area: time2;
+}
+
+.time3 {
+  grid-area: time3;
+}
+
+.destination {
+  grid-area: destination;
+  font-size: 30px;
+}
+
+.arrow1 {
+  grid-area: arrow1;
+  font-size: 50px;
+}
+
+.arrow2 {
+  grid-area: arrow2;
+  font-size: 50px;
+}
+
+.arrow3 {
+  grid-area: arrow3;
+  font-size: 50px;
+}
