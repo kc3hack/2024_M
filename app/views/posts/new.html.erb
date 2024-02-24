@@ -2,22 +2,26 @@
 	<head>
 		<title>Route Map</title>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-		 <%= stylesheet_link_tag 'postsNew', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag 'postsNew', media: 'all', 'data-turbolinks-track': 'reload' %>
 	</head>
 	<body>
 		<div id="map" style="width: 100vw; height: 80vh;"></div>
         <input id="button_next" type="button" value="次の経路を表示" onclick="nextRoutes()">
         <div><p id="route-time"></p></div>
 		<div id="edit_area">ここに調べた経路と時間がまとめて出てきます。</div>
-        <div class="result">
-            <div>上の結果を貼り付けて経路を投稿しよう！！</div>
-			<br>
-            <%= form_for @history do |f| %>
-                    <%= f.text_field :history,:size => 140 %>
-                    <br>
-                <%= f.submit "履歴に保存する（投稿）"%>
-            <% end %>
-        </div>
+
+		<% if user_signed_in? %>
+			<div class="result">
+				<div>上の結果を貼り付けて経路を投稿しよう！！</div>
+				<br>
+				<%= form_for @history do |f| %>
+						<%= f.text_field :history,:size => 140 %>
+						<br>
+					<%= f.submit "履歴に保存する（投稿）"%>
+				<% end %>
+			</div>
+		<% end %>
+	<button class="searchRouteButton" onclick="location.href='/courses/new'">サイトトップ</button>
 	</body>
 </html>
 <script>
