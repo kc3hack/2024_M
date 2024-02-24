@@ -119,11 +119,20 @@ li {
   z-index: 0;
   margin-left: 20vw;
   margin-right: 15vw;
-  margin-top: 30px;
-  height: 45vh;
+  margin-top: 15px;
+  height: 48vh;
   width: 60vw;
   border:2px solid #000;
 }
+
+.title {
+  font-size: 40px;
+}
+
+.recommend {
+  font-size: 30px;
+}
+
 .searchButton {
   z-index: 1;
   margin-top: 0vh;
@@ -131,4 +140,164 @@ li {
   height: 5vh;
   margin-left: 85%;
   background-color: #fefdfd;
+}
+
+cp_box *, .cp_box *:before, .cp_box *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.recommend1 {
+  font-size: 30px;
+}
+.cp_box {
+  width: auto;
+}
+.cp_box label {
+  font-weight: bold;
+  position: relative;
+  display:block;
+  width: 20%;
+  height:20%;
+  margin: auto;
+  padding: 0.3em 1em;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-align: center;
+  color: #040404;
+  border: 2px solid #040404;
+  border-radius: 3px;
+}
+.cp_box label:hover {
+  transition: all 0.1s;
+  color: #ffffff;
+  background: #6d6a6b;
+}
+
+
+
+.cp_box input {
+  display: none;
+}
+.cp_box .cp_container {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  height: 0;
+  margin-top: -1px;
+  transition: height 0.3s ease-in-out,box-shadow 0.6s linear;
+  background: rgba(255, 255, 255, 0.5);
+}
+.cp_box input:checked ~ div {
+  transition: height 0.5s ease-in-out,box-shadow 0.1s linear;
+}
+/* 続きを読むを押すと表示されるテキストの高さ */
+.cp_box input:checked ~ div.cp_container {
+  height: 20px;
+}
+
+cp_box *, .cp_box *:before, .cp_box *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cp_box1 {
+  width: auto;
+}
+.cp_box1 label {
+  font-weight: bold;
+  position: relative;
+  display:block;
+  width: 20%;
+  height:20%;
+  margin: auto;
+  padding: 0.3em 1em;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-align: center;
+  color: #040404;
+  border: 2px solid #040404;
+  border-radius: 3px;
+}
+.cp_box1 label:hover {
+  transition: all 0.1s;
+  color: #ffffff;
+  background: #6d6a6b;
+}
+
+
+
+.cp_box1 input {
+  display: none;
+}
+.cp_box1 .cp_container1 {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  height: 0;
+  margin-top: -1px;
+  transition: height 0.3s ease-in-out,box-shadow 0.6s linear;
+  background: rgba(255, 255, 255, 0.5);
+}
+.cp_box1 input:checked ~ div {
+  transition: height 0.5s ease-in-out,box-shadow 0.1s linear;
+}
+/* 続きを読むを押すと表示されるテキストの高さ */
+.cp_box1 input:checked ~ div.cp_container1 {
+  height: 20px;
+}
+
+.cp_box1 *, .cp_box1 *:before, .cp_box1 *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cp_box2 {
+  width: auto;
+}
+.cp_box2 label {
+  font-weight: bold;
+  position: relative;
+  display:block;
+  width: 20%;
+  height:20%;
+  margin: auto;
+  padding: 0.3em 1em;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-align: center;
+  color: #040404;
+  border: 2px solid #040404;
+  border-radius: 3px;
+}
+.cp_box2 label:hover {
+  transition: all 0.1s;
+  color: #ffffff;
+  background: #6d6a6b;
+}
+
+
+
+.cp_box2 input {
+  display: none;
+}
+.cp_box2 .cp_container2 {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  height: 0;
+  margin-top: -1px;
+  transition: height 0.3s ease-in-out,box-shadow 0.6s linear;
+  background: rgba(255, 255, 255, 0.5);
+}
+.cp_box2 input:checked ~ div {
+  transition: height 0.5s ease-in-out,box-shadow 0.1s linear;
+}
+/* 続きを読むを押すと表示されるテキストの高さ */
+.cp_box2 input:checked ~ div.cp_container2 {
+  height: 20px;
+}
+
+.cp_box2 *, .cp_box2 *:before, .cp_box2 *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
