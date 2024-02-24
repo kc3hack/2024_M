@@ -9,6 +9,8 @@
     <body>
         <!-- サイトトップボタン -->
         <button class="siteTopButton" onclick="location.href='/courses/siteTop'">サイトトップ</button>
+        <!-- 掲示板ボタン -->
+        <button class="postButton" onclick="location.href='/posts'">掲示板</button>
         <!-- ログアウトボタン -->
         <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "signOutButton" %>
         <div class="textRecommendRoute">
@@ -29,7 +31,7 @@
   <h1>ユーザーページ</h1>
 <% end %>
 
-<!-- ログ -->
+<!-- 案1 -->
 <%= @user.name %>:
 <%= @user.id %>
 <hr>
@@ -51,6 +53,44 @@
 
   <% end %>
 </div>
+
+<!-- 案2 -->
+
+<div class="wrapper">
+  <ul class="tab">
+    <li><a href="#lunch">ランチ</a></li>
+    <li><a href="#drink">ドリンク</a></li>
+    <li><a href="#dinner">ディナー</a></li>
+  </ul>
+
+    <div id="lunch" class="area">
+      <h2>ランチ</h2>
+      <ul>
+        <li>ガパオライス</li>
+        <li>ミートソーススパゲティ―</li>
+        <li>ハンバーグ定食</li>
+      </ul>
+    <!--/area--></div>
+    <div id="drink" class="area">
+      <h2>ドリンク</h2>
+      <ul>
+        <li>ウーロン茶</li>
+        <li>オレンジジュース</li>
+        <li>ジンジャーエール</li>
+      </ul>
+    <!--/area--></div>
+    <div id="dinner" class="area">
+      <h2>ディナー</h2>
+      <ul>
+        <li>カレーライス</li>
+        <li>ドリア</li>
+        <li>グラタン</li>
+      </ul>
+    <!--/area--></div>
+<!--wrapper-->
+</div>
+
+
 <%
 =begin%>
  履歴: <%= index %> => <%= data %> 
@@ -75,3 +115,38 @@
   </div>
 </div>
 
+<script>
+//任意のタブにURLからリンクするための設定
+function GethashID (hashIDName){
+  if(hashIDName){
+    //タブ設定
+    $('.tab li').find('a').each(function() { //タブ内のaタグ全てを取得
+      var idName = $(this).attr('href'); //タブ内のaタグのリンク名（例）#lunchの値を取得 
+      if(idName == hashIDName){ //リンク元の指定されたURLのハッシュタグ（例）http://example.com/#lunch←この#の値とタブ内のリンク名（例）#lunchが同じかをチェック
+        var parentElm = $(this).parent(); //タブ内のaタグの親要素（li）を取得
+        $('.tab li').removeClass("active"); //タブ内のliについているactiveクラスを取り除き
+        $(parentElm).addClass("active"); //リンク元の指定されたURLのハッシュタグとタブ内のリンク名が同じであれば、liにactiveクラスを追加
+        //表示させるエリア設定
+        $(".area").removeClass("is-active"); //もともとついているis-activeクラスを取り除き
+        $(hashIDName).addClass("is-active"); //表示させたいエリアのタブリンク名をクリックしたら、表示エリアにis-activeクラスを追加 
+      }
+    });
+  }
+}
+
+//タブをクリックしたら
+$('.tab a').on('click', function() {
+  var idName = $(this).attr('href'); //タブ内のリンク名を取得  
+  GethashID (idName);//設定したタブの読み込みと
+  return false;//aタグを無効にする
+});
+
+
+// 上記の動きをページが読み込まれたらすぐに動かす
+$(window).on('load', function () {
+    $('.tab li:first-of-type').addClass("active"); //最初のliにactiveクラスを追加
+    $('.area:first-of-type').addClass("is-active"); //最初の.areaにis-activeクラスを追加
+  var hashName = location.hash; //リンク元の指定されたURLのハッシュタグを取得
+  GethashID (hashName);//設定したタブの読み込み
+});
+</script>
