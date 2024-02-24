@@ -8,8 +8,11 @@
   </head>
   <body>
   <div>
+   
     <% if user_signed_in? %>
       <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "loginButton" %>
+       <!-- サイトトップボタン -->
+      <button class="mypageButton" onclick="location.href='/mypage.html'">マイページ</button>
     <% else %>
       <!-- ログインボタン -->
       <button class="loginButton" onclick="location.href='/courses/login.html'">ログイン</button>

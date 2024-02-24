@@ -4,23 +4,84 @@
     <head>
         <meta charset="utf-8">
         <title>サイトトップ</title>
-        <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag 'show1', media: 'all', 'data-turbolinks-track': 'reload' %>
     </head>
     <body>
         <!-- サイトトップボタン -->
-        <button class="siteTopButton" onclick="location.href='/courses/siteTop'">サイトトップ</button>
+        <button class="siteTopButton" onclick="location.href='/courses/siteTop.html'">サイトトップ</button>
         <!-- 掲示板ボタン -->
         <button class="postButton" onclick="location.href='/posts'">掲示板</button>
         <!-- ログアウトボタン -->
         <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "signOutButton" %>
         <div class="textRecommendRoute">
-            <% @history.each do |f| %>
-                <%= f.history %>
-            <% end %>
+        
         </div>
         <div class="divcenter">
         <div class="recommendRoute2">
-            
+            <% @history.each_slice(3) do |slice| %>
+              <% slice.each_with_index do |t, index| %>
+                <% data = t.history.split(',') %>
+                
+                <% if data.length == 4 then %>
+                  
+                 
+                  <br>
+                  <div class="container4">
+                    <div class="item departure"><%= data[0] %></div>
+                    <div class="item transportation1"><%= data[1] %></div>
+                    <div class="item arrow1">→</div>
+                    <div class="item time1"><%= data[2] %></div>
+                    <div class="item destination"><%= data[3] %></div>
+                    <div class="item none"></div>
+                  </div>
+                  <br>
+
+                <% elsif data.length == 7 then %>
+                  
+                  <br>
+                  <div class="container7">
+                    <div class="item none"></div>
+
+                    <div class="item departure"><%= data[0] %></div>
+                    <div class="item transportation1"><%= data[1] %></div>
+                    <div class="item arrow1">→</div>
+                    <div class="item time1"><%= data[2] %></div>
+                    <div class="item waypoint1"><%= data[3] %></div>
+
+                    <div class="item arrow2">→</div>
+                    <div class="item transportation2"><%= data[4] %></div>
+                    <div class="item time2"><%= data[5] %></div>
+                    <div class="item destination"><%= data[6] %></div>
+                  </div>
+                  <br>
+
+                <% elsif data.length == 10 then %>
+                
+                  <br>
+                  <div class="container10">
+                    <div class="item none"></div>
+
+                    <div class="item departure"><%= data[0] %></div>
+                    <div class="item transportation1"><%= data[1] %></div>
+                    <div class="item arrow1">→</div>
+                    <div class="item time1"><%= data[2] %></div>
+                    <div class="item waypoint1"><%= data[3] %></div>
+
+                    <div class="item arrow2">→</div>
+                    <div class="item transportation2"><%= data[4] %></div>
+                    <div class="item time2"><%= data[5] %></div>
+                    <div class="item waypoint2"><%= data[6] %></div>
+
+                    <div class="item arrow3">→</div>
+                    <div class="item transportation3"><%= data[7] %></div>
+                    <div class="item time3"><%= data[8] %></div>
+                    <div class="item destination"><%= data[9] %></div>
+                  </div>
+                  <br>
+
+                <% end %>
+              <% end %>
+            <% end %>
         </div>
         <!-- 経路検索ボタン -->
         <button class="searchButton" onclick="location.href='/courses/new'">経路検索</button>
@@ -30,123 +91,3 @@
 <% else %>
   <h1>ユーザーページ</h1>
 <% end %>
-
-<!-- 案1 -->
-<%= @user.name %>:
-<%= @user.id %>
-<hr>
-<div class="display-area">
-  <% @history.each_slice(3) do |slice| %>
-
-      <% slice.each_with_index do |t, index| %>
-        <div class="history">
-          <% data = t.history.split(',') %>
-
-          <div class="item departure"> <h2><%= data[0] %></h2> </div>
-          <div class="item transportation"> <%= data[1] %> </div>
-          <div class="item time"> <%= data[2] %> </div>
-          <div class="item arrow"></div>
-          <div class="item destination"> <h2> <%= data[3] %> </h2> </div>
-          
-        </div>
-      <% end %>
-
-  <% end %>
-</div>
-
-<!-- 案2 -->
-
-<div class="wrapper">
-  <ul class="tab">
-    <li><a href="#lunch">ランチ</a></li>
-    <li><a href="#drink">ドリンク</a></li>
-    <li><a href="#dinner">ディナー</a></li>
-  </ul>
-
-    <div id="lunch" class="area">
-      <h2>ランチ</h2>
-      <ul>
-        <li>ガパオライス</li>
-        <li>ミートソーススパゲティ―</li>
-        <li>ハンバーグ定食</li>
-      </ul>
-    <!--/area--></div>
-    <div id="drink" class="area">
-      <h2>ドリンク</h2>
-      <ul>
-        <li>ウーロン茶</li>
-        <li>オレンジジュース</li>
-        <li>ジンジャーエール</li>
-      </ul>
-    <!--/area--></div>
-    <div id="dinner" class="area">
-      <h2>ディナー</h2>
-      <ul>
-        <li>カレーライス</li>
-        <li>ドリア</li>
-        <li>グラタン</li>
-      </ul>
-    <!--/area--></div>
-<!--wrapper-->
-</div>
-
-
-<%
-=begin%>
- 履歴: <%= index %> => <%= data %> 
-<%
-=end%>
-
-<hr>
-<!-- テスト -->
-<!--コンテナ-->
-<div class="container"> 
-  <!--アイテム-->
-  <div class="history">
-    <div class="item">item1</div>
-    <div class="item">item2</div>
-    <div class="item">item3</div>
-    <div class="item">item4</div>
-    <div class="item">item5</div>
-    <div class="item">item6</div>
-    <div class="item">item7</div>
-    <div class="item">item8</div>
-    <div class="item">item9</div>
-  </div>
-</div>
-
-<script>
-//任意のタブにURLからリンクするための設定
-function GethashID (hashIDName){
-  if(hashIDName){
-    //タブ設定
-    $('.tab li').find('a').each(function() { //タブ内のaタグ全てを取得
-      var idName = $(this).attr('href'); //タブ内のaタグのリンク名（例）#lunchの値を取得 
-      if(idName == hashIDName){ //リンク元の指定されたURLのハッシュタグ（例）http://example.com/#lunch←この#の値とタブ内のリンク名（例）#lunchが同じかをチェック
-        var parentElm = $(this).parent(); //タブ内のaタグの親要素（li）を取得
-        $('.tab li').removeClass("active"); //タブ内のliについているactiveクラスを取り除き
-        $(parentElm).addClass("active"); //リンク元の指定されたURLのハッシュタグとタブ内のリンク名が同じであれば、liにactiveクラスを追加
-        //表示させるエリア設定
-        $(".area").removeClass("is-active"); //もともとついているis-activeクラスを取り除き
-        $(hashIDName).addClass("is-active"); //表示させたいエリアのタブリンク名をクリックしたら、表示エリアにis-activeクラスを追加 
-      }
-    });
-  }
-}
-
-//タブをクリックしたら
-$('.tab a').on('click', function() {
-  var idName = $(this).attr('href'); //タブ内のリンク名を取得  
-  GethashID (idName);//設定したタブの読み込みと
-  return false;//aタグを無効にする
-});
-
-
-// 上記の動きをページが読み込まれたらすぐに動かす
-$(window).on('load', function () {
-    $('.tab li:first-of-type').addClass("active"); //最初のliにactiveクラスを追加
-    $('.area:first-of-type').addClass("is-active"); //最初の.areaにis-activeクラスを追加
-  var hashName = location.hash; //リンク元の指定されたURLのハッシュタグを取得
-  GethashID (hashName);//設定したタブの読み込み
-});
-</script>
