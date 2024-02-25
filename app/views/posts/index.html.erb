@@ -75,9 +75,33 @@
         .total-time {
             margin-top: 10px;
         }
+
+        .postButton {
+          z-index: 1;
+          position: fixed;
+          margin-top: 1vh;
+          width: 8vw;
+          height: 5vh;
+          margin-left: 89vw;
+          background-color: #fefdfd;
+        }
+
+        .mypageButton {
+          z-index: 1;
+          position: fixed;
+          margin-top: 1vh;
+          padding-top:0px;
+          margin-left: 2vh;
+          width: 8vw;
+          height: 5vh;
+          margin-right: 90%;
+          background-color: #fefdfd;
+        }
     </style>
 </head>
 <body>
+<%= button_to 'Course検索へ' , '/courses/new', class: "postButton" %>
+<%= button_to 'マイページへ', '/mypage' , class: "mypageButton"%>
 
 <% total_time = 0 %>  
 
@@ -103,10 +127,7 @@
             </div>
           <% end %>
 
-          <!-- 合計時間の表示 -->
-          <div class="total-time">
-            <h3>合計時間: <%= total_time %> 分</h3>
-          </div>
+      
 
           <!-- 必要に応じて他の情報を表示 -->
 
@@ -117,9 +138,7 @@
     
   <% end %>
 
-    <%= link_to 'Course検索へ', '/courses/new' %>
-    <br>
-    <%= link_to 'マイページへ', '/mypage' %>
+    
 
 </body>
 
