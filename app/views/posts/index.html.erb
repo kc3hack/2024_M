@@ -13,7 +13,7 @@
         .panel-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            /* gap: 20px; */
             margin-bottom: 20px;
         }
 
@@ -49,10 +49,11 @@
         }
 
         .time-slot {
-          margin: 2em auto;
-          padding:2em;/*内側余白*/
+          margin: 1em auto;
+          padding: 8em;
+          /* margin:10px; */
+          /* padding:0px; */
           position: relative;
-          padding:1.5em;
           z-index: 0;
           background-color:#d6e0ea;/*背景色*/
           
@@ -75,10 +76,60 @@
         .total-time {
             margin-top: 10px;
         }
+
+        .postButton {
+          z-index: 1;
+          display: grid;
+          width: 8vw;
+          height: 5vh;
+
+          background-color: #fefdfd;
+          grid-area: post;
+          align-content: center; 
+        }
+
+        .mypageButton {
+          z-index: 1;
+          display: grid;
+          width: 8vw;
+          height: 5vh;
+
+          background-color: #fefdfd;
+          grid-area: mypage;
+          align-content: center; 
+        }
+
+        .title {
+          display: grid;
+          text-align:center;
+          grid-area: title;
+          align-content: center; 
+        }
+
+        .head {
+          /* background-color: gray; */
+          height: 10vh;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr ;
+          grid-template-areas:
+            "mypage title post";
+          align-items: center;
+          justify-items: center;
+           
+        }
+        .dd {
+          font-size:25px;
+        }
     </style>
 </head>
 <body>
-<h1 style="text-align:center";>みんなの経路</h1>
+<div class="head">
+  <h1 class="title">みんなの経路</h1>
+  <button class="postButton" onclick="location.href='/courses/new.html'">経路検索</button>
+  <button class="mypageButton" onclick="location.href='/mypage.html'">マイページ</button>
+</div>
+
 <% total_time = 0 %>  
 
   <% @history.each_slice(3) do |slice| %>
@@ -87,7 +138,7 @@
       <% slice.each_with_index do |t, index| %>
         <% data = t.history.split(',') %>
         <div class="time-slot">
-          <h2><%= data.first %> - <%= data.last %></h2>
+          <h2 class="dd"><%= data.first %> - <%= data.last %></h2>
           <div class="divider"></div>
 
           <% (0..10).each do |panel_index| %>
@@ -103,10 +154,7 @@
             </div>
           <% end %>
 
-          <!-- 合計時間の表示 -->
-          <div class="total-time">
-            <h3>合計時間: <%= total_time %> 分</h3>
-          </div>
+      
 
           <!-- 必要に応じて他の情報を表示 -->
 
@@ -117,9 +165,7 @@
     
   <% end %>
 
-    <%= link_to 'Course検索へ', '/courses/new' %>
-    <br>
-    <%= link_to 'マイページへ', '/mypage' %>
+    
 
 </body>
 
